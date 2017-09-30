@@ -23,8 +23,13 @@ module back() {
     translate([61,0,-8.39]) cube([5,3,8.39]);
 
     // rebate joins
-    translate([-3,0,0]) cube([3,3,12.5]);
-    translate([66,0,0]) cube([3,3,12.5]);
+    // L
+    translate([-3,0,0]) cube([3,3,25/3]);
+    translate([-3,0,50/3]) cube([3,3,25/3]);
+
+    // R
+    translate([66,0,0]) cube([3,3,25/3]);
+    translate([66,0,50/3]) cube([3,3,25/3]);
 
 }
 
@@ -34,8 +39,8 @@ module sides() {
     translate([66,3,0]) cube([3,26,25]);
 
     // rebate joins
-    translate([-3,0,12.5]) cube([3,3,12.5]);
-    translate([66,0,12.5]) cube([3,3,12.5]);
+    translate([-3,0,25/3]) cube([3,3,25/3]);
+    translate([66,0,25/3]) cube([3,3,25/3]);
 }
 
 module front() {
