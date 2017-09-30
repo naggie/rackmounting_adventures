@@ -39,7 +39,7 @@ module front() {
     translate([0,26,0]) {
         difference() {
             cube([66,3,25]);
-            translate([18.5,0,12.5]) hole(3.2);
+            translate([18.5,0,12.5]) hole(3.8);
             translate([18.5,-2,12.5]) hole(6);
         }
         translate([18.5,0,12.5]) {
