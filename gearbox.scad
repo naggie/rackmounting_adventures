@@ -17,3 +17,6 @@ difference() {
     translate([56.25,0,12.5]) translate([0,2,0]) cube([1.5,5,2.7],true);
 
 }
+
+translate([0,0,-8.39]) cube([5,3,8.39]);
+translate([61,0,-8.39]) cube([5,3,8.39]);
