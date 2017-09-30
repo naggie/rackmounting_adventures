@@ -10,7 +10,7 @@ difference() {
 
     translate([13.5,0,12.5]) hole(4.2);
     translate([13.5,-2,12.5]) hole(6.9);
-    translate([23.5,0,12.5]) hole(1.75);
+    translate([23.5,0,12.5]) hole(1.8);
 
     translate([43.5,0,12.5]) hole(3.65);
 
