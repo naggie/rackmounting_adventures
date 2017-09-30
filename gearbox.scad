@@ -23,15 +23,19 @@ module back() {
     translate([61,0,-8.39]) cube([5,3,8.39]);
 
     // rebate joins
-    translate([-3,0,0]) cube([3,1.5,25]);
-    translate([66,0,0]) cube([3,1.5,25]);
+    translate([-3,0,0]) cube([3,3,12.5]);
+    translate([66,0,0]) cube([3,3,12.5]);
 
 }
 
 // 19.7 min, 21mm between back and front bearing with a margin
 module sides() {
-    translate([-3,1.5,0]) cube([3,27.5,25]);
-    translate([66,1.5,0]) cube([3,27.5,25]);
+    translate([-3,3,0]) cube([3,26,25]);
+    translate([66,3,0]) cube([3,26,25]);
+
+    // rebate joins
+    translate([-3,0,12.5]) cube([3,3,12.5]);
+    translate([66,0,12.5]) cube([3,3,12.5]);
 }
 
 module front() {
@@ -51,9 +55,8 @@ module front() {
     }
 }
 
-color("gray") back();
-
 union() {
     sides();
     front();
 }
+color("gray") back();
