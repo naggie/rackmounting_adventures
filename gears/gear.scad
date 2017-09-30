@@ -23,5 +23,5 @@ difference() {
             bore_diameter = 6
             );
     }
-    cylinder(13,3.3,3.3);
+    cylinder(13,3.2,3.2);
 }
