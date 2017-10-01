@@ -38,10 +38,10 @@ module linpotgear() {
     gear (circular_pitch=350,
         gear_thickness = 5,
         rim_thickness = 4,
-        hub_thickness = 10,
-        bore_diameter = 6
+        hub_thickness = 6,
+        bore_diameter = 6.2
         );
 }
 
-//linpotgear();
-logpotgear();
+linpotgear();
+//logpotgear();
