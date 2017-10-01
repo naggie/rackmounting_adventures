@@ -34,7 +34,6 @@ module logpotgear() {
 }
 
 module linpotgear() {
-
     gear (circular_pitch=350,
         gear_thickness = 5,
         rim_thickness = 4,
@@ -43,5 +42,5 @@ module linpotgear() {
         );
 }
 
-linpotgear();
+//linpotgear();
 //logpotgear();

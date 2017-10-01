@@ -9,12 +9,14 @@ module back() {
     difference() {
         cube([66,3,25]);
 
+        // log pot interface
         translate([18.5,0,12.5]) hole(4.2);
         translate([18.5,-2,12.5]) hole(6.9);
         translate([28.5,0,12.5]) hole(1.8);
 
+        // lin pot hole
         translate([48.5,0,12.5]) hole(3.65);
-
+        // lin pot locating leg
         translate([56.25,0,12.5]) translate([0,2,0]) cube([1.5,5,2.7],true);
     }
 
