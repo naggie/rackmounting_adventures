@@ -14,7 +14,7 @@ $fn =120;
 difference() {
     union() {
         cylinder(14.5,4.5,4.5);
-        cylinder(32,3,3);
+        cylinder(34,3,3);
 
         gear (circular_pitch=350,
             gear_thickness = 4,
