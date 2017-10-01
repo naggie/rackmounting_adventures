@@ -1,3 +1,5 @@
+// top 6.39
+// bottom 8.39
 difference() {
     cube([26,3.8,8.39]);
     translate([6,-1,3]) cube([14,5,8]);
