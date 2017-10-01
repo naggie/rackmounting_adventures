@@ -21,6 +21,8 @@ module back() {
     // feet
     translate([0,0,-8.39]) cube([5,3,8.39]);
     translate([61,0,-8.39]) cube([5,3,8.39]);
+    translate([0,0,25]) cube([5,3,8.39]);
+    translate([61,0,25]) cube([5,3,8.39]);
 
     // rebate joins
     // L
@@ -64,4 +66,4 @@ union() {
     sides();
     front();
 }
-//color("gray") back();
+color("gray") back();
