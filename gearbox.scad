@@ -33,10 +33,9 @@ module back() {
 
 }
 
-// 19.7 min, 21mm between back and front bearing with a margin
 module sides() {
-    translate([-3,3,0]) cube([3,26,25]);
-    translate([66,3,0]) cube([3,26,25]);
+    translate([-3,3,0]) cube([3,27,25]);
+    translate([66,3,0]) cube([3,27,25]);
 
     // rebate joins
     translate([-3,0,25/3]) cube([3,3,25/3]);
@@ -44,13 +43,14 @@ module sides() {
 }
 
 module front() {
-    // bearing seat
-    translate([0,26,0]) {
+    translate([0,27,0]) {
         difference() {
             cube([66,3,25]);
+            // bearing seat
             translate([18.5,0,12.5]) hole(3.8);
             translate([18.5,-2,12.5]) hole(6);
         }
+        // bearing seat
         translate([18.5,0,12.5]) {
             difference() {
                 rotate([90,0,0]) cylinder(2,7,7);
@@ -64,4 +64,4 @@ union() {
     sides();
     front();
 }
-color("gray") back();
+//color("gray") back();
