@@ -64,8 +64,8 @@ module front() {
     }
 }
 
-//union() {
-//    sides();
-//    front();
-//}
-color("gray") back();
+union(r=4) {
+union() sides();
+union() front();
+}
+//color("gray") back();
