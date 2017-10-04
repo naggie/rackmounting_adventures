@@ -4,6 +4,10 @@ module hole(r) {
     translate([0,4,0]) rotate([90,0,0]) cylinder(5,r,r);
 }
 
+        // lin pot hole
+        translate([48.5,0,12.5]) hole(3.65);
+        // lin pot locating leg
+        translate([56.25,0,12.5]) translate([0,2,0]) cube([1.5,5,2.7],true);
 
 module back() {
     difference() {
@@ -65,7 +69,7 @@ module front() {
 }
 
 union(r=4) {
-union() sides();
-union() front();
+    union() sides();
+    union() front();
 }
-//color("gray") back();
+color("gray") back();
