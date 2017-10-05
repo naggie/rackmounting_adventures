@@ -159,7 +159,7 @@ difference() {
     // lin pot hole
     translate([25,4,15.5]) rotate([90,0,0]) cylinder(5,3.65,3.65);
     // lin pot locating leg
-    translate([32.75,1,15.5]) cube([1.5,5,2.7],true);
+    translate([25,1,15.5]) rotate([0,90,0]) translate([7.75,0,0]) cube([1.5,5,2.7],true);
 }
 
 lid();
