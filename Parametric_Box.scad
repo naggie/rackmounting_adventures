@@ -16,7 +16,7 @@ length = 100;   //[10:254]
 // Width of box in mm
 width = 50;    //[10:254]
 // Height of box in mm
-tall = 25;      //[10:254]
+tall = 28;      //[10:254]
 // Wall thickness of box in mm
 thick = 3;      //[1:15]
 // Depth of lip on lid in mm
@@ -157,9 +157,9 @@ module addVentHoles (pWidth, pHeight, gWidth, gHeight, hSize, hSpace, hLength, x
 difference() {
     box();
     // lin pot hole
-    translate([25,4,12.5]) rotate([90,0,0]) cylinder(5,3.65,3.65);
+    translate([25,4,15.5]) rotate([90,0,0]) cylinder(5,3.65,3.65);
     // lin pot locating leg
-    translate([32.75,-1,12.5]) translate([0,2,0]) cube([1.5,5,2.7],true);
+    translate([32.75,1,15.5]) cube([1.5,5,2.7],true);
 }
 
 lid();
