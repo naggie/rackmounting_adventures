@@ -155,11 +155,18 @@ module addVentHoles (pWidth, pHeight, gWidth, gHeight, hSize, hSpace, hLength, x
 }
 
 difference() {
-    box();
+    union() {
+        box();
+        translate([2,2.5,0]) cube([45,5.5,24]);
+        }
     // lin pot hole
-    translate([25,4,15.5]) rotate([90,0,0]) cylinder(5,3.65,3.65);
+    translate([25,8.5,15.5]) rotate([90,0,0]) cylinder(5,3.65,3.65);
     // lin pot locating leg
-    translate([25,1,15.5]) rotate([0,90,0]) translate([7.75,0,0]) cube([1.5,5,2.7],true);
+    translate([25,7,15.5]) rotate([0,90,0]) translate([7.75,0,0]) cube([1.5,5,2.7],true);
+    // rebate
+    translate([25,4,15.5]) rotate([90,0,0]) cylinder(5,8,8);
 }
+
+
 
 lid();
