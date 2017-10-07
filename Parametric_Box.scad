@@ -157,8 +157,9 @@ module addVentHoles (pWidth, pHeight, gWidth, gHeight, hSize, hSpace, hLength, x
 difference() {
     union() {
         box();
-        translate([2,2.5,0]) cube([45,5.5,24]);
-        }
+        // back support for pot nut
+        translate([12.5,2.5,0]) cube([25,5.5,24]);
+    }
     // lin pot hole
     translate([25,8.5,15.5]) rotate([90,0,0]) cylinder(5,3.65,3.65);
     // lin pot locating leg
