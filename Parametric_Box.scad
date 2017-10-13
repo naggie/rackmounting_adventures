@@ -14,7 +14,7 @@
 // Length of box in mm
 length = 100;   //[10:254]
 // Width of box in mm
-width = 50;    //[10:254]
+width = 40;    //[10:254]
 // Height of box in mm
 tall = 28;      //[10:254]
 // Wall thickness of box in mm
@@ -158,16 +158,28 @@ difference() {
     union() {
         box();
         // back support for pot nut
-        translate([12.5,2.5,0]) cube([25,5.5,24]);
+        translate([3,2.5,0]) cube([25,5.5,24]);
     }
     // lin pot hole
-    translate([25,8.5,15.5]) rotate([90,0,0]) cylinder(5,3.65,3.65);
+    translate([15.5,8.5,15.5]) rotate([90,0,0]) cylinder(5,3.65,3.65);
     // lin pot locating leg
-    translate([25,7,15.5]) rotate([0,90,0]) translate([7.75,0,0]) cube([1.5,5,2.7],true);
+    translate([15.5,7,15.5]) rotate([0,90,0]) translate([7.75,0,0]) cube([1.5,5,2.7],true);
     // rebate
-    translate([25,4,15.5]) rotate([90,0,0]) cylinder(5,8,8);
+    translate([15.5,4,15.5]) rotate([90,0,0]) cylinder(5,8,8);
 }
 
 
 
 lid();
+
+module standoff() union() {
+    cylinder(10,2,2);
+    cylinder(13,1,1);
+}
+
+translate([7,25,0]) {
+    translate([0,0,0]) standoff();
+    translate([26,0,0]) standoff();
+    translate([26,66,0]) standoff();
+    translate([0,66,0]) standoff();
+}
