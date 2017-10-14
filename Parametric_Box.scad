@@ -174,10 +174,10 @@ lid();
 
 module standoff() union() {
     cylinder(10,2,2);
-    cylinder(13,1,1);
+    cylinder(11,1,1);
 }
 
-translate([7,25,0]) {
+translate([7,22,0]) {
     translate([0,0,0]) standoff();
     translate([26,0,0]) standoff();
     translate([26,66,0]) standoff();
