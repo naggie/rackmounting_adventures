@@ -4,10 +4,16 @@ module hole(r) {
     translate([0,4,0]) rotate([90,0,0]) cylinder(5,r,r);
 }
 
-        // lin pot hole
-        translate([48.5,0,12.5]) hole(3.65);
-        // lin pot locating leg
-        translate([56.25,0,12.5]) translate([0,2,0]) cube([1.5,5,2.7],true);
+module tab() {
+    difference() {
+        cube([10,15,3]);
+        hull() {
+            translate([5,10,-1]) cylinder(5,2.5,2.5);
+            translate([5,5,-1]) cylinder(5,2.5,2.5);
+        }
+    }
+}
+
 
 module back() {
     difference() {
@@ -25,10 +31,8 @@ module back() {
     }
 
     // feet
-    translate([0,0,-8.39]) cube([5,3,8.39]);
-    translate([61,0,-8.39]) cube([5,3,8.39]);
-    translate([0,0,25]) cube([5,3,8.39]);
-    translate([61,0,25]) cube([5,3,8.39]);
+    translate([-3,0,-8.39]) cube([10,3,8.39]);
+    translate([64,0,-8.39]) cube([10,3,8.39]);
 
     // rebate joins
     // L
@@ -39,6 +43,11 @@ module back() {
     translate([66,0,0]) cube([3,3,25/3]);
     translate([66,0,50/3]) cube([3,3,25/3]);
 
+    // right leg support
+    translate([69,3,0]) rotate([90,0,0]) linear_extrude(3) polygon([[0,0],[0,5],[5,0]]);
+
+    translate([-3,-15,-8.39]) tab();
+    translate([64,-15,-8.39]) tab();
 }
 
 module sides() {
