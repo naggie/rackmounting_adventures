@@ -8,8 +8,8 @@ module tab() {
     difference() {
         cube([10,15,3]);
         hull() {
-            translate([5,10,-1]) cylinder(5,2.5,2.5);
-            translate([5,5,-1]) cylinder(5,2.5,2.5);
+            translate([5,10,-1]) cylinder(5,2,2);
+            translate([5,5,-1]) cylinder(5,2,2);
         }
     }
 }
