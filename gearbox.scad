@@ -63,10 +63,19 @@ module sides() {
 module front() {
     translate([0,27,0]) {
         difference() {
-            cube([66,3,25]);
+            union() {
+                cube([66,3,25]);
+                // reinforcements for oled
+                translate([32,0,-3]) cube([37,3,3]);
+                translate([32,0,25]) cube([37,3,5]);
+            }
             // bearing seat
             translate([18.5,0,12.5]) hole(3.8);
             translate([18.5,-2,12.5]) hole(6);
+
+            // OLED screen
+            translate([36,-1,5]) cube([26,5,15]);
+            translate([35.5,-3,1]) cube([27,5,27.8]);
         }
         // bearing seat
         translate([18.5,0,12.5]) {
@@ -78,8 +87,8 @@ module front() {
     }
 }
 
-//union(r=4) {
-//    union() sides();
-//    union() front();
-//}
+union(r=4) {
+    sides();
+    front();
+}
 color("gray") back();
