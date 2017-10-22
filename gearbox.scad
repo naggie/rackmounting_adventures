@@ -55,6 +55,7 @@ module sides() {
     translate([-3,3,0]) cube([3,27,25]);
     translate([66,3,0]) cube([3,27,25]);
 
+
     // rebate joins
     translate([-3,0,25/3]) cube([3,3,25/3]);
     translate([66,0,25/3]) cube([3,3,25/3]);
@@ -90,7 +91,11 @@ module front() {
 }
 
 union(r=4) {
-    sides();
-    !front();
+    difference() {
+        sides();
+        // zip tie mounting point for oled cables
+        translate([65,15,21.5]) cube([5,4,2]);
+    }
+    front();
 }
 color("gray") back();
