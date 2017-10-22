@@ -67,17 +67,17 @@ module front() {
                 cube([66,3,25]);
                 // reinforcements for oled
                 translate([32,0,-3]) cube([37,3,3]);
-                translate([32,0,25]) cube([37,3,5]);
+                translate([32,0,25]) cube([37,3,6]);
                 // screen seat
-                translate([34,-1,-1]) cube([30,3,30]);
+                translate([34,-1,-0.5]) cube([30,3,30]);
             }
             // bearing seat
             translate([18.5,0,12.5]) hole(3.8);
             translate([18.5,-2,12.5]) hole(6);
 
             // OLED screen
-            translate([36,-1,5.5]) cube([26,5,14]);
-            translate([35,-3,0]) cube([28,5,28]);
+            translate([36,-1,6]) cube([26,5,13]);
+            translate([35,-3,0.5]) cube([28,5,28]);
         }
         // bearing seat
         translate([18.5,0,12.5]) {
