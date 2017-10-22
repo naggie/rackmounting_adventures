@@ -60,11 +60,6 @@ module sides() {
     translate([66,0,25/3]) cube([3,3,25/3]);
 }
 
-module oled_standoff() rotate([90,0,0]) union() {
-    cylinder(1.6,1.5,1.5);
-    cylinder(2.7,1,1);
-}
-
 module front() {
     translate([0,27,0]) {
         difference() {
@@ -91,10 +86,6 @@ module front() {
                 translate([0,1,0]) rotate([90,0,0]) cylinder(5,6,6);
             }
         }
-        translate([37,2,3]) oled_standoff();
-        translate([61,2,3]) oled_standoff();
-        translate([37,2,27]) oled_standoff();
-        translate([61,2,27]) oled_standoff();
     }
 }
 
