@@ -74,8 +74,12 @@ module front() {
                     translate([34,-1,-0.5]) cube([30,3,30]);
                 }
 
-                translate([-15,0,12.5]) rotate([270,0,0]) cylinder(h=3,d=25);
+                // mount for switch
+                translate([-17,0,12.5]) rotate([270,0,0]) cylinder(h=3,d=25);
             }
+            // hole for switch
+            translate([-17,0,12.5]) rotate([270,0,0]) translate([0,0,-1]) cylinder(h=5,d=16);
+
             // bearing seat
             translate([18.5,0,12.5]) hole(3.8);
             translate([18.5,-2,12.5]) hole(6);
