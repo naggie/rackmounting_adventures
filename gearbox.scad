@@ -78,7 +78,7 @@ module front() {
                 translate([-17,0,12.5]) rotate([270,0,0]) cylinder(h=3,d=25);
             }
             // hole for switch
-            translate([-17,0,12.5]) rotate([270,0,0]) translate([0,0,-1]) cylinder(h=5,d=16);
+            translate([-17,0,12.5]) rotate([270,0,0]) translate([0,0,-1]) cylinder(h=5,d=17.5);
 
             // bearing seat
             translate([18.5,0,12.5]) hole(3.8);
@@ -102,8 +102,8 @@ union(r=4) {
     difference() {
         sides();
         // zip tie mounting point for oled cables
-        translate([65,15,21.5]) cube([5,4,2]);
-        translate([-4,15,21.5]) cube([5,4,2]);
+        translate([65,15,2]) cube([5,4,2]);
+        translate([-4,15,2]) cube([5,4,2]);
     }
     front();
 }
