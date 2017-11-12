@@ -99,6 +99,7 @@ union(r=4) {
         sides();
         // zip tie mounting point for oled cables
         translate([65,15,21.5]) cube([5,4,2]);
+        translate([-4,15,21.5]) cube([5,4,2]);
     }
     front();
 }
