@@ -12,4 +12,4 @@ color("green") {
     translate([48.5,13,12.5]) rotate([90,0,0]) linpotgear();
 }
 
-pcb();
+color("gray") pcb();

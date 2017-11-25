@@ -119,6 +119,7 @@ module pcb() {
 
     // PCB bracket
     translate([38,0,22]) rotate([180,90,0]) linear_extrude(2) polygon([[0,0],[15,0],[0,15]]);
+    translate([66,0,22]) rotate([180,90,0]) linear_extrude(2) polygon([[0,0],[15,0],[0,11]]);
 }
 
 union(r=4) {
@@ -131,5 +132,5 @@ union(r=4) {
     front();
 }
 color("gray") back();
-pcb();
+color("gray") pcb();
 
