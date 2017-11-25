@@ -48,14 +48,14 @@ module back() {
 
     hull() {
         // right leg
-        translate([79,0,25]) cube([10,3,8.39]);
+        translate([82,0,25]) cube([10,3,8.39]);
         // R rebate bottom
         translate([66,0,50/3]) cube([3,3,25/3]);
     }
 
     // bolt fixing points
     translate([-8,-15,30.39]) tab();
-    translate([79,-15,30.39]) tab();
+    translate([82,-15,30.39]) tab();
 }
 
 module sides() {
