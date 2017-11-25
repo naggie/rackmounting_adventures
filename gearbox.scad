@@ -30,24 +30,28 @@ module back() {
         translate([56.25,0,12.5]) translate([0,2,0]) cube([1.5,5,2.7],true);
     }
 
-    // feet
-    translate([-8,0,25]) cube([10,3,8.39]);
-    translate([79,0,22]) cube([10,3,11.39]);
+
 
     // rebate joins
-    // L
+    // L rebate top
     translate([-3,0,0]) cube([3,3,25/3]);
-    translate([-3,0,50/3]) cube([3,3,25/3]);
 
-    // R
+    // R rebate top
     translate([66,0,0]) cube([3,3,25/3]);
-    translate([66,0,50/3]) cube([3,3,25/3]);
 
-    // left leg support
-    translate([-8,3,20]) rotate([90,0,0]) linear_extrude(3) polygon([[0,5],[5,5],[5,0]]);
+    hull() {
+        // left leg
+        translate([-8,0,25]) cube([10,3,8.39]);
+        // L rebate bottom
+        translate([-3,0,50/3]) cube([3,3,25/3]);
+    }
 
-    // right leg support
-    translate([69,3,19.5]) rotate([90,0,0]) linear_extrude(3) polygon([[0,-3],[20,2.5],[0,2.5]]);
+    hull() {
+        // right leg
+        translate([79,0,25]) cube([10,3,8.39]);
+        // R rebate bottom
+        translate([66,0,50/3]) cube([3,3,25/3]);
+    }
 
     // bolt fixing points
     translate([-8,-15,30.39]) tab();
@@ -111,6 +115,8 @@ union(r=4) {
     front();
 }
 color("gray") back();
+
+// PCB holder
 translate([36,-73,22]) difference() {
     cube([43,73,3]);
     translate([3.5,3.5,-8]) {
