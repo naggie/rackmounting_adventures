@@ -32,7 +32,7 @@ module back() {
 
     // feet
     translate([-8,0,25]) cube([10,3,8.39]);
-    translate([69,0,22]) cube([10,3,11.39]);
+    translate([79,0,22]) cube([10,3,11.39]);
 
     // rebate joins
     // L
@@ -47,11 +47,11 @@ module back() {
     translate([-8,3,20]) rotate([90,0,0]) linear_extrude(3) polygon([[0,5],[5,5],[5,0]]);
 
     // right leg support
-    translate([69,3,19.5]) rotate([90,0,0]) linear_extrude(3) polygon([[0,-3],[10,2.5],[0,2.5]]);
+    translate([69,3,19.5]) rotate([90,0,0]) linear_extrude(3) polygon([[0,-3],[20,2.5],[0,2.5]]);
 
     // bolt fixing points
     translate([-8,-15,30.39]) tab();
-    translate([69,-15,30.39]) tab();
+    translate([79,-15,30.39]) tab();
 }
 
 module sides() {
