@@ -59,9 +59,17 @@ module back() {
 }
 
 module sides() {
-    translate([-3,3,0]) cube([3,27,25]);
-    translate([66,3,0]) cube([3,27,25]);
+    difference() {
+        translate([-3,3,0]) cube([3,27,25]);
+        // zip tie mounting point for oled cables
+        translate([-4,15,2]) cube([5,4,2]);
+    }
 
+    difference() {
+        translate([66,3,0]) cube([3,27,25]);
+        // zip tie mounting point for oled cables
+        translate([65,15,2]) cube([5,4,2]);
+    }
 
     // rebate joins
     translate([-3,0,25/3]) cube([3,3,25/3]);
@@ -109,7 +117,7 @@ module pcb() {
     // PCB holder
     translate([36,-73,22]) difference() {
         cube([45,73,3]);
-        translate([5.5,3.5,-8]) {
+        translate([5.5,3.5,-7.5]) {
             // standoff holes
             translate([0,0,0]) cylinder(10,r=1.5);
             translate([36,0,0]) cylinder(10,r=1.5);
@@ -122,15 +130,8 @@ module pcb() {
     translate([38,0,22]) rotate([180,90,0]) linear_extrude(2) polygon([[0,0],[15,0],[0,70]]);
 }
 
-union(r=4) {
-    difference() {
-        sides();
-        // zip tie mounting point for oled cables
-        translate([65,15,2]) cube([5,4,2]);
-        translate([-4,15,2]) cube([5,4,2]);
-    }
-    front();
-}
+front();
+sides();
 color("gray") back();
 color("gray") pcb();
 
