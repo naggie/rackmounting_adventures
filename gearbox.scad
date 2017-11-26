@@ -110,6 +110,7 @@ module pcb() {
     translate([36,-73,22]) difference() {
         cube([45,73,3]);
         translate([5.5,3.5,-8]) {
+            // standoff holes
             translate([0,0,0]) cylinder(10,r=1.5);
             translate([36,0,0]) cylinder(10,r=1.5);
             translate([36,56,0]) cylinder(10,r=1.5);
@@ -118,8 +119,7 @@ module pcb() {
     }
 
     // PCB bracket
-    translate([38,0,22]) rotate([180,90,0]) linear_extrude(2) polygon([[0,0],[15,0],[0,15]]);
-    translate([66,0,22]) rotate([180,90,0]) linear_extrude(2) polygon([[0,0],[15,0],[0,11]]);
+    translate([38,0,22]) rotate([180,90,0]) linear_extrude(2) polygon([[0,0],[15,0],[0,70]]);
 }
 
 union(r=4) {
