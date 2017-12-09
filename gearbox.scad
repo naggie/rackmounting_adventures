@@ -83,10 +83,10 @@ module front() {
                 union() {
                     cube([66,3,25]);
                     // reinforcements for oled
-                    translate([32,0,-3]) cube([37,3,3]);
-                    translate([32,0,25]) cube([37,3,6]);
+                    translate([24,0,-3]) cube([45,3,3]);
+                    translate([24,0,25]) cube([45,3,6]);
                     // screen seat
-                    translate([34,-1,-0.5]) cube([30,3,30]);
+                    translate([26,-1,-0.5]) cube([30,3,30]);
                 }
 
                 // mount for switch
@@ -100,8 +100,8 @@ module front() {
             translate([18.5,-2,12.5]) hole(6);
 
             // OLED screen
-            translate([36,-1,6]) cube([26,5,13]);
-            translate([35,-3,0.5]) cube([28,5,28]);
+            translate([28,-1,6]) cube([26,5,13]);
+            translate([27,-3,0.5]) cube([28,5,28]);
         }
         // bearing seat
         translate([18.5,0,12.5]) {
