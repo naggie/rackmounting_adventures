@@ -83,8 +83,8 @@ module front() {
                 union() {
                     cube([66,3,25]);
                     // reinforcements for oled
-                    translate([24,0,-3]) cube([45,3,3]);
-                    translate([24,0,25]) cube([45,3,6]);
+                    translate([24,0,-3]) cube([35,3,3]);
+                    translate([24,0,25]) cube([35,3,6]);
                     // screen seat
                     translate([26,-1,-0.5]) cube([30,3,30]);
                 }
@@ -117,7 +117,7 @@ module pcb() {
     // PCB holder
     translate([36,-73,22]) difference() {
         cube([45,73,3]);
-        translate([5.5,3.5,-5]) {
+        translate([5.5,3.5,-8]) {
             // standoff holes
             translate([0,0,0]) cylinder(10,r=1.55);
             translate([36,0,0]) cylinder(10,r=1.55);
