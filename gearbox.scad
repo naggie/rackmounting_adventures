@@ -87,6 +87,9 @@ module front() {
                     translate([24,0,25]) cube([35,3,6]);
                     // screen seat
                     translate([26,-1,-0.5]) cube([30,3,30]);
+
+                    // IR receiver holder
+                    translate([68, 0, 2.5]) cube([26, 3, 20]);
                 }
 
                 // mount for switch
@@ -102,6 +105,10 @@ module front() {
             // OLED screen
             translate([28,-1,6]) cube([26,5,13]);
             translate([27,-3,0.5]) cube([28,5,28]);
+
+            // hole to mount IR receiver
+            translate([78, -3, 0]) cube([6, 5, 16.5]);
+            translate([81, 0, 12.5]) rotate([270,0,0]) translate([0,0,-1]) cylinder(h=5,d=4);
         }
         // bearing seat
         translate([18.5,0,12.5]) {
@@ -110,6 +117,7 @@ module front() {
                 translate([0,1,0]) rotate([90,0,0]) cylinder(5,6,6);
             }
         }
+
     }
 }
 
