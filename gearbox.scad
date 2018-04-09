@@ -107,7 +107,7 @@ module front() {
             translate([27,-3,0.5]) cube([28,5,28]);
 
             // hole to mount IR receiver
-            translate([78, -3, 0]) cube([6, 5, 16.5]);
+            translate([78, -3, 5]) cube([6, 5, 12]);
             translate([81, 0, 12.5]) rotate([270,0,0]) translate([0,0,-1]) cylinder(h=5,d=4);
         }
         // bearing seat
@@ -117,6 +117,9 @@ module front() {
                 translate([0,1,0]) rotate([90,0,0]) cylinder(5,6,6);
             }
         }
+
+        // cable mount for IR receiver
+        translate([78, -17, 2]) cube([6, 20, 4]);
 
     }
 }
