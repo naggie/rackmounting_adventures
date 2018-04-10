@@ -12,8 +12,8 @@ difference() {
         translate([-1, -1, 0]) cube([82, 54, 5]);
         translate([0, 0, 2.6]) cube([80, 52, 10]);
     }
-    translate([8.5, 29.9, -1]) rounded_cube(63, 40, 10, 1.75);
-    translate([8.5, -18.1, -1]) rounded_cube(63, 40, 10, 1.75);
+    translate([8.5, 30.4, -1]) rounded_cube(63, 40, 10, 1.75);
+    translate([8.5, -17.6, -1]) rounded_cube(63, 40, 10, 1.75);
     translate([11, 26.4, -1]) cylinder(h=10, d=3.8);
     translate([66, 26.4, -1]) cylinder(h=10, d=3.8);
 }
