@@ -8,8 +8,8 @@ $fn = 200;
 difference() {
     // interference fit
     difference() {
-        translate([-1, -1, 0]) cube([81, 53, 5.6]);
-        translate([0, 0, 4.6]) cube([79, 51, 10]);
+        translate([-1, -1, 0]) cube([81, 53, 5]);
+        translate([0, 0, 2.6]) cube([79, 51, 10]);
     }
     translate([8, 29.4, -1]) rounded_cube(63, 40, 10, 1.75);
     translate([8, -18.6, -1]) rounded_cube(63, 40, 10, 1.75);
