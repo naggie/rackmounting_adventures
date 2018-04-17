@@ -30,8 +30,6 @@ module back() {
         translate([56.25,0,12.5]) translate([0,2,0]) cube([1.5,5,2.7],true);
     }
 
-
-
     // rebate joins
     // L rebate top
     translate([-3,0,0]) cube([3,3,25/3]);
@@ -39,23 +37,11 @@ module back() {
     // R rebate top
     translate([66,0,0]) cube([3,3,25/3]);
 
-    hull() {
-        // left leg
-        translate([-8,0,25]) cube([10,3,8.39]);
-        // L rebate bottom
-        translate([-3,0,50/3]) cube([3,3,25/3]);
-    }
+    // L rebate bottom
+    translate([-3,0,50/3]) cube([3,3,25/3]);
 
-    hull() {
-        // right leg
-        translate([82,0,25]) cube([10,3,8.39]);
-        // R rebate bottom
-        translate([66,0,50/3]) cube([3,3,25/3]);
-    }
-
-    // bolt fixing points
-    translate([-8,-15,30.39]) tab();
-    translate([82,-15,30.39]) tab();
+    // R rebate bottom
+    translate([66,0,50/3]) cube([3,3,25/3]);
 }
 
 module sides() {
@@ -142,13 +128,10 @@ module pcb() {
 }
 
 difference() {
-    union() {
-        front();
-        sides();
-        //color("gray") back();
-        //color("gray") pcb();
-    }
+    front();
     // cut of buttom to clear folded metal
     translate([0, 0, 28]) cube([100, 100, 10]);
 }
 
+        sides();
+        color("gray") back();
