@@ -127,11 +127,11 @@ module pcb() {
     translate([38,0,22]) rotate([180,90,0]) linear_extrude(2) polygon([[0,0],[15,0],[0,70]]);
 }
 
-difference() {
-    front();
-    // cut of buttom to clear folded metal
-    translate([0, 0, 28]) cube([100, 100, 10]);
-}
-
-        sides();
-        color("gray") back();
+//difference() {
+//    front();
+//    // cut of buttom to clear folded metal
+//    translate([0, 0, 28]) cube([100, 100, 10]);
+//}
+//
+//sides();
+color("gray") back();
