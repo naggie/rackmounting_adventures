@@ -43,33 +43,35 @@ void setup() {
   Wire.beginTransmission(RELAY_ADDR);
   Wire.write(MCP23017_IODIRB); // IODIRB register
   Wire.write(0x00); // set all of port B to outputs
+  Wire.endTransmission();    
+  Wire.beginTransmission(RELAY_ADDR);
+  Wire.write(MCP23017_GPIOA); // address port A
+  Wire.write(0x00);  // value to send
   Wire.endTransmission();
+  Wire.beginTransmission(RELAY_ADDR);
+  Wire.write(MCP23017_GPIOB); // address port B
+  Wire.write(0x00);  // value to send
+  Wire.endTransmission();
+  delay(2000);
 }
 
 
 // flip the pin #0 up and down
 
 void loop() {
-  delay(500);
+  uint16_t a;
+  for( a = 0; a < 0xFF; a++ ){
 
-  Wire.beginTransmission(RELAY_ADDR);
-  Wire.write(MCP23017_GPIOA); // address port A
-  Wire.write(0xFF);  // value to send
-  Wire.endTransmission();
-  Wire.beginTransmission(RELAY_ADDR);
-  Wire.write(MCP23017_GPIOB); // address port B
-  Wire.write(0xFF);  // value to send
-  Wire.endTransmission();
-
-  delay(500);
-
-  Wire.beginTransmission(RELAY_ADDR);
-  Wire.write(MCP23017_GPIOA); // address port A
-  Wire.write(0x00);  // value to send
-   Wire.endTransmission();
-  Wire.beginTransmission(RELAY_ADDR);
-  Wire.write(MCP23017_GPIOB); // address port B
-  Wire.write(0x00);  // value to send
-  Wire.endTransmission();
- 
+  
+    delay(200);
+  
+    Wire.beginTransmission(RELAY_ADDR);
+    Wire.write(MCP23017_GPIOA); // address port A
+    Wire.write(a>>8);  // value to send
+    Wire.endTransmission();
+    Wire.beginTransmission(RELAY_ADDR);
+    Wire.write(MCP23017_GPIOB); // address port B
+    Wire.write(a & 0xFF);  // value to send
+    Wire.endTransmission();
+  }
 }
