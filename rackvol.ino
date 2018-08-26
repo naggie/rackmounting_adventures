@@ -39,7 +39,6 @@ void setup() {
   Wire.beginTransmission(RELAY_ADDR);
   Wire.write(MCP23017_IODIRA); // IODIRA register
   Wire.write(0x00); // set all of port A to outputs
-  Wire.beginTransmission(0x20);
   Wire.write(MCP23017_IODIRB); // IODIRB register
   Wire.write(0x00); // set all of port B to outputs
   Wire.endTransmission();
