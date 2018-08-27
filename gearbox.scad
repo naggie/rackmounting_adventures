@@ -75,7 +75,7 @@ module front() {
                     translate([26,-1,-0.5]) cube([30,3,30]);
 
                     // IR receiver holder
-                    translate([68, 0, 2.5]) cube([12, 3, 20]);
+                    translate([68, -3, 2.5]) cube([12, 6, 20]);
                 }
 
                 // mount for switch
@@ -93,8 +93,8 @@ module front() {
             translate([27,-3,0.5]) cube([28,5,28]);
 
             // hole to mount IR receiver
-            translate([72, -2.5, 3.5]) cube([6, 5, 12]);
-            translate([71.5, -2.5, 9]) cube([7, 5, 2.5]);
+            translate([72, -6, 3.5]) cube([6, 8, 12]);
+            translate([71.5, -6, 9]) cube([7, 8, 2.5]);
             translate([75, 0, 12.5]) rotate([270,0,0]) translate([0,0,-1]) cylinder(h=5,d=6);
         }
         // bearing seat
