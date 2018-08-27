@@ -33,45 +33,45 @@
 
 #define MCP23017_INT_ERR 255
 
-  
-void setup() {  
-  Wire.begin(D2, D1);
-  Wire.beginTransmission(RELAY_ADDR);
-  Wire.write(MCP23017_IODIRA); // IODIRA register
-  Wire.write(0x00); // set all of port A to outputs
-  Wire.endTransmission();
-  Wire.beginTransmission(RELAY_ADDR);
-  Wire.write(MCP23017_IODIRB); // IODIRB register
-  Wire.write(0x00); // set all of port B to outputs
-  Wire.endTransmission();    
-  Wire.beginTransmission(RELAY_ADDR);
-  Wire.write(MCP23017_GPIOA); // address port A
-  Wire.write(0x00);  // value to send
-  Wire.endTransmission();
-  Wire.beginTransmission(RELAY_ADDR);
-  Wire.write(MCP23017_GPIOB); // address port B
-  Wire.write(0x00);  // value to send
-  Wire.endTransmission();
-  delay(2000);
+
+void setup() {
+    Wire.begin(D2, D1);
+    Wire.beginTransmission(RELAY_ADDR);
+    Wire.write(MCP23017_IODIRA); // IODIRA register
+    Wire.write(0x00); // set all of port A to outputs
+    Wire.endTransmission();
+    Wire.beginTransmission(RELAY_ADDR);
+    Wire.write(MCP23017_IODIRB); // IODIRB register
+    Wire.write(0x00); // set all of port B to outputs
+    Wire.endTransmission();
+    Wire.beginTransmission(RELAY_ADDR);
+    Wire.write(MCP23017_GPIOA); // address port A
+    Wire.write(0x00);  // value to send
+    Wire.endTransmission();
+    Wire.beginTransmission(RELAY_ADDR);
+    Wire.write(MCP23017_GPIOB); // address port B
+    Wire.write(0x00);  // value to send
+    Wire.endTransmission();
+    delay(2000);
 }
 
 
 // flip the pin #0 up and down
 
 void loop() {
-  uint16_t a;
-  for( a = 0; a < 0xFF; a++ ){
+    uint16_t a;
+    for( a = 0; a < 0xFF; a++ ){
 
-  
-    delay(200);
-  
-    Wire.beginTransmission(RELAY_ADDR);
-    Wire.write(MCP23017_GPIOA); // address port A
-    Wire.write(a>>8);  // value to send
-    Wire.endTransmission();
-    Wire.beginTransmission(RELAY_ADDR);
-    Wire.write(MCP23017_GPIOB); // address port B
-    Wire.write(a & 0xFF);  // value to send
-    Wire.endTransmission();
-  }
+
+        delay(200);
+
+        Wire.beginTransmission(RELAY_ADDR);
+        Wire.write(MCP23017_GPIOA); // address port A
+        Wire.write(a>>8);  // value to send
+        Wire.endTransmission();
+        Wire.beginTransmission(RELAY_ADDR);
+        Wire.write(MCP23017_GPIOB); // address port B
+        Wire.write(a & 0xFF);  // value to send
+        Wire.endTransmission();
+    }
 }
