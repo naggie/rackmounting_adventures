@@ -93,7 +93,7 @@ module front() {
             translate([27,-3,0.5]) cube([28,5,28]);
 
             // hole to mount IR receiver
-            translate([72, -6, 3.5]) cube([6, 8, 12]);
+            translate([72, -6, 4.5]) cube([6, 8, 12]);
             translate([71.5, -6, 9]) cube([7, 8, 2.5]);
             translate([75, 0, 12.5]) rotate([270,0,0]) translate([0,0,-1]) cylinder(h=5,d=6);
         }
@@ -128,11 +128,11 @@ module pcb() {
     translate([38,0,22]) rotate([180,90,0]) linear_extrude(2) polygon([[0,0],[15,0],[0,70]]);
 }
 
-//difference() {
+difference() {
     front();
-//    // cut of buttom to clear folded metal
-//    translate([0, 0, 28]) cube([100, 100, 10]);
-//}
+    // cut of buttom to clear folded metal
+    translate([0, 0, 28]) cube([100, 100, 10]);
+}
 //
 //sides();
 //color("gray") back();
