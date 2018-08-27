@@ -75,7 +75,7 @@ module front() {
                     translate([26,-1,-0.5]) cube([30,3,30]);
 
                     // IR receiver holder
-                    translate([68, 0, 2.5]) cube([26, 3, 20]);
+                    translate([68, 0, 2.5]) cube([12, 3, 20]);
                 }
 
                 // mount for switch
@@ -93,8 +93,9 @@ module front() {
             translate([27,-3,0.5]) cube([28,5,28]);
 
             // hole to mount IR receiver
-            translate([78, -3, 5]) cube([6, 5, 12]);
-            translate([81, 0, 12.5]) rotate([270,0,0]) translate([0,0,-1]) cylinder(h=5,d=4);
+            translate([72, -2.5, 3.5]) cube([6, 5, 12]);
+            translate([71.5, -2.5, 9]) cube([7, 5, 2.5]);
+            translate([75, 0, 12.5]) rotate([270,0,0]) translate([0,0,-1]) cylinder(h=5,d=6);
         }
         // bearing seat
         translate([18.5,0,12.5]) {
@@ -105,7 +106,7 @@ module front() {
         }
 
         // cable mount for IR receiver
-        translate([78, -17, 2]) cube([6, 20, 4]);
+        translate([72, -17, 3]) cube([6, 20, 3]);
 
     }
 }
@@ -128,10 +129,10 @@ module pcb() {
 }
 
 //difference() {
-//    front();
+    front();
 //    // cut of buttom to clear folded metal
 //    translate([0, 0, 28]) cube([100, 100, 10]);
 //}
 //
 //sides();
-color("gray") back();
+//color("gray") back();
