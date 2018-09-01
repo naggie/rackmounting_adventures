@@ -79,7 +79,7 @@ void loop() {
         return;
     }
 
-    Serial.readStringUntil('\n').toCharArray(input, 4);
+    Serial.readStringUntil('\n').toCharArray(input, 6);
     i = strtol(input, NULL, 16);
     setRelays(i);
 }
