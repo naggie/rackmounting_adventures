@@ -17,7 +17,7 @@ module logpotgear() {
     difference() {
         union() {
             cylinder(14.5,4.5,4.5);
-            cylinder(34,3,3);
+            cylinder(34,2.95,2.95);
 
             gear (circular_pitch=350,
                 gear_thickness = 4,
