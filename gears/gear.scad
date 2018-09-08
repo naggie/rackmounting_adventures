@@ -1,7 +1,7 @@
 // http://www.thingiverse.com/thing:3575
 use <parametric_involute_gear_v5.0.scad>
 
-$fn =120;
+$fn =200;
 
 // original
 //gear (circular_pitch=350,
@@ -26,7 +26,7 @@ module logpotgear() {
                 bore_diameter = 6
                 );
         }
-        translate([0,0,-1]) cylinder(14,3.1,3.1);
+        translate([0,0,-1]) cylinder(14,3.15,3.15);
 
         // air hole
         translate([0,0,-1]) cylinder(40,0.6,0.6);
@@ -38,9 +38,9 @@ module linpotgear() {
         gear_thickness = 5,
         rim_thickness = 4,
         hub_thickness = 6,
-        bore_diameter = 6.2
+        bore_diameter = 6.1
         );
 }
 
-//linpotgear();
-logpotgear();
+linpotgear();
+//logpotgear();
