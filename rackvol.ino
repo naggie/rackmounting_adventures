@@ -46,16 +46,17 @@ void setupRelays() {
 }
 
 void setRelays(uint16_t value) {
-    value = ~value
+    // relays are pull low active
+    value = ~value;
 
     Wire.beginTransmission(RELAY_ADDR);
     Wire.write(MCP23017_GPIOA);
-    Wire.write(value && 0xF);
+    Wire.write(value & 0xFF);
     Wire.endTransmission();
 
     Wire.beginTransmission(RELAY_ADDR);
     Wire.write(MCP23017_GPIOB);
-    Wire.write(value >> 8);
+    Wire.write((value >> 8 )& 0xFF);
     Wire.endTransmission();
 }
 
@@ -64,21 +65,21 @@ void setup() {
     Serial.begin(9600);
 
     setupRelays();
-    setRelays(0xFF);
+    setRelays(0xFFFF);
 
     delay(2000);
 }
 
 
 void loop() {
-    char input[4];
+    char input[6];
     uint16_t i;
 
     if (Serial.available() == 0) {
         return;
     }
 
-    input = Serial.readStringUntil('\n');
-    i = strtol( &input, NULL, 16);
+    Serial.readStringUntil('\n').toCharArray(input, 6);
+    i = strtol(input, NULL, 16);
     setRelays(i);
 }
