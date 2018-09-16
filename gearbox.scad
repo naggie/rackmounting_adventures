@@ -69,10 +69,10 @@ module front() {
                 union() {
                     cube([66,3,25]);
                     // reinforcements for oled
-                    translate([24,0,-3]) cube([35,3,3]);
-                    translate([24,0,25]) cube([35,3,6]);
+                    translate([34,0,-3]) cube([35,3,3]);
+                    translate([34,0,25]) cube([35,3,6]);
                     // screen seat
-                    translate([26,-1,-0.5]) cube([30,3,30]);
+                    translate([36,-1,-0.5]) cube([30,3,30]);
 
                     // IR receiver holder
                     translate([68, -3, 2.5]) cube([12, 6, 20]);
@@ -89,8 +89,8 @@ module front() {
             translate([18.5,-2,12.5]) hole(6);
 
             // OLED screen
-            translate([28,-1,6]) cube([26,5,13]);
-            translate([27,-3,0.5]) cube([28,5,28]);
+            translate([38,-1,6]) cube([26,5,13]);
+            translate([37,-3,0.5]) cube([28,5,28]);
 
             // hole to mount IR receiver
             translate([72, -6, 4.5]) cube([6, 8, 12]);
@@ -109,23 +109,6 @@ module front() {
         translate([72, -17, 3]) cube([6, 20, 3]);
 
     }
-}
-
-module pcb() {
-    // PCB holder
-    translate([36,-73,22]) difference() {
-        cube([45,73,3]);
-        translate([5.5,3.5,-8]) {
-            // standoff holes
-            translate([0,0,0]) cylinder(10,r=1.55);
-            translate([36,0,0]) cylinder(10,r=1.55);
-            translate([36,56,0]) cylinder(10,r=1.55);
-            translate([0,56,0]) cylinder(10,r=1.55);
-        }
-    }
-
-    // PCB bracket
-    translate([38,0,22]) rotate([180,90,0]) linear_extrude(2) polygon([[0,0],[15,0],[0,70]]);
 }
 
 difference() {
