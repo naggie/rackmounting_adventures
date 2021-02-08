@@ -51,7 +51,7 @@ module dac_bracket() mirror([0,0,1]) {
         // main shape
         hull() {
             linear_extrude(30) offset(3) rounded_square(dac_case_w, dac_case_h, dac_case_r);
-            linear_extrude(5) offset(15) rounded_square(dac_case_w, dac_case_h, dac_case_r);
+            linear_extrude(5) rounded_square(dac_case_w, dac_case_h+30, dac_case_r);
         }
 
         // dac cut through
