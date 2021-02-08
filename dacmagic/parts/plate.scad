@@ -1,0 +1,2 @@
+include <../plate.scad>;
+plate();

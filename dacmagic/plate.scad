@@ -102,26 +102,30 @@ module rack2u(mode=NORMAL) {
     }
 }
 
-color("#555") linear_extrude(panel_t)
-difference() {
-    translate([0,-rack_h/2,0]) rack2u();
 
-    // main power
-    translate([35,20,0]) switch();
+module plate() {
+    difference() {
+        translate([0,-rack_h/2,0]) rack2u();
 
-    // soft power
-    translate([35,-20,0]) circle(d=16);
+        // main power
+        translate([35,20,0]) switch();
+
+        // soft power
+        translate([35,-20,0]) circle(d=16);
 
 
-    translate([57,-display_h/2,0]) display();
-    translate([144,0,0]) knob();
-    translate([dac_offset_x,0,0]) dac_cutout();
+        translate([57,-display_h/2,0]) display();
+        translate([144,0,0]) knob();
+        translate([dac_offset_x,0,0]) dac_cutout();
 
-    // AUX switch
-    translate([415,0,0]) circle(d=6);
+        // AUX switch
+        translate([415,0,0]) circle(d=6);
 
-    translate([445,0,0]) xlr();
+        translate([445,0,0]) xlr();
+    }
 }
 
-translate([dac_offset_x,0,panel_t]) dac();
-color("#777") translate([dac_offset_x,0,0]) dac_bracket();
+// TODO view:
+//color("#555") linear_extrude(panel_t)
+//translate([dac_offset_x,0,panel_t]) dac();
+//color("#777") translate([dac_offset_x,0,0]) dac_bracket();
