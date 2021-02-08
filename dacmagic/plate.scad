@@ -27,6 +27,8 @@ panel_t = 2.0;
 // https://www.nmri.go.jp/oldpages/eng/khirata/metalwork/basic/bolt/index_e.html
 bolt_clearance_d = 3.5;
 
+include <include/dac.scad>;
+
 module rounded_square(x,y,r) {
     translate([-x/2,-y/2]) offset(r) offset(-r) square([x,y]);
 }
