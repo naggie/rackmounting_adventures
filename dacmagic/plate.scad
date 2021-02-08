@@ -97,13 +97,13 @@ module display() {
     offset(1.5) offset(-1.5) square([display_w,display_h]);
     // TODO correct
     // keepout
-    %translate([-5,-3]) square([63,35]);
+    #translate([-5,-3]) square([63,35]);
 }
 
 module switch() {
     circle(d=10);
     // keep-out
-    %square([15,29],center=true);
+    #square([15,29],center=true);
 }
 
 module rack_hole(d,l) {
@@ -130,11 +130,12 @@ module rack2u() {
     }
 
     // keep-out
-    %square([rack_ear, rack_h]);
-    %translate([rack_w-rack_ear,0]) square([rack_ear, rack_h]);
+    #square([rack_ear, rack_h]);
+    #translate([rack_w-rack_ear,0]) square([rack_ear, rack_h]);
 }
 
-color("grey") linear_extrude(panel_t) difference() {
+color("grey") linear_extrude(panel_t)
+difference() {
     translate([0,-rack_h/2,0]) rack2u();
 
     // main power
