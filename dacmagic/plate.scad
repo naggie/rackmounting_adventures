@@ -27,15 +27,24 @@ panel_t = 2.0;
 // https://www.nmri.go.jp/oldpages/eng/khirata/metalwork/basic/bolt/index_e.html
 bolt_clearance_d = 3.5;
 
+// modes to allow offsets without spanning modules
+NORMAL=1;
+SILKSCREEN=2;
+CLEARANCE=3;
+
+
 include <include/dac.scad>;
 
 module rounded_square(x,y,r) {
     translate([-x/2,-y/2]) offset(r) offset(-r) square([x,y]);
 }
 
-module knob() {
-    circle(d=6);
-    #circle(d=30);
+module knob(mode=NORMAL) {
+    if (mode == NORMAL) {
+        circle(d=6);
+    } else if (mode == CLEARANCE) {
+        circle(d=30);
+    }
 }
 
 module xlr(spacing=30) {
@@ -47,17 +56,21 @@ module xlr(spacing=30) {
     }
 }
 
-module display() {
-    offset(1.5) offset(-1.5) square([display_w,display_h]);
-    // TODO correct
-    // keepout
-    #translate([-5,-3]) square([63,35]);
+module display(mode=NORMAL) {
+    if (mode == NORMAL) {
+        offset(1.5) offset(-1.5) square([display_w,display_h]);
+    } else if (mode == CLEARANCE) {
+        // TODO correct
+        translate([-5,-3]) square([63,35]);
+    }
 }
 
-module switch() {
-    circle(d=10);
-    // keep-out
-    #square([15,29],center=true);
+module switch(mode=NORMAL) {
+    if (mode == NORMAL) {
+        circle(d=10);
+    } else if (mode == CLEARANCE) {
+        square([15,29],center=true);
+    }
 }
 
 module rack_hole(d,l) {
@@ -67,25 +80,26 @@ module rack_hole(d,l) {
     }
 }
 
-module rack2u() {
+module rack2u(mode=NORMAL) {
     hole_d = 6.4;
     hole_l = 9.7;
     hole_offset_x = 4.5;
     hole_offset_y = 2.8;
 
-    difference() {
-        // main body
-        square([rack_w,rack_h]);
-        // holes
-        translate([hole_offset_x, hole_offset_y]) rack_hole(hole_d, hole_l);
-        translate([hole_offset_x, rack_h-hole_offset_y-hole_d]) rack_hole(hole_d, hole_l);
-        translate([rack_w-hole_offset_x-hole_l, hole_offset_y]) rack_hole(hole_d, hole_l);
-        translate([rack_w-hole_offset_x-hole_l, rack_h-hole_offset_y-hole_d]) rack_hole(hole_d, hole_l);
+    if (mode == NORMAL) {
+        difference() {
+            // main body
+            square([rack_w,rack_h]);
+            // holes
+            translate([hole_offset_x, hole_offset_y]) rack_hole(hole_d, hole_l);
+            translate([hole_offset_x, rack_h-hole_offset_y-hole_d]) rack_hole(hole_d, hole_l);
+            translate([rack_w-hole_offset_x-hole_l, hole_offset_y]) rack_hole(hole_d, hole_l);
+            translate([rack_w-hole_offset_x-hole_l, rack_h-hole_offset_y-hole_d]) rack_hole(hole_d, hole_l);
+        }
+    } else if (mode == CLEARANCE) {
+        square([rack_ear, rack_h]);
+        translate([rack_w-rack_ear,0]) square([rack_ear, rack_h]);
     }
-
-    // keep-out
-    //#square([rack_ear, rack_h]);
-    //#translate([rack_w-rack_ear,0]) square([rack_ear, rack_h]);
 }
 
 color("#555") linear_extrude(panel_t)
