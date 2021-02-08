@@ -1,2 +1,2 @@
-include <../plate.scad>;
+include <../main.scad>;
 plate();
