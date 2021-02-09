@@ -9,17 +9,16 @@ module dac_bracket() mirror([0,0,1]) {
         }
 
         // dac cut through
-        translate([0,0,-500]) linear_extrude(1000) rounded_square(dac_case_w+margin, dac_case_h+margin, dac_case_r+margin);
+        translate([0,0,-500]) linear_extrude(1000) rounded_square(dac_case_w+2*margin, dac_case_h+2*margin, dac_case_r+margin);
 
         // bezel cut through
-        translate([0,0,-1]) linear_extrude(dac_bezel_t-panel_t+1) rounded_square(dac_bezel_w+margin, dac_bezel_h+margin, dac_bezel_r+margin);
+        translate([0,0,-1]) linear_extrude(dac_bezel_t-panel_t+1) rounded_square(dac_bezel_w+2*margin, dac_bezel_h+2*margin, dac_bezel_r+margin);
 
         // bolt holes
-        translate([0,0,-500]) linear_extrude(1000) dac_screwholes(3.7);
+        translate([0,0,-500]) linear_extrude(1000) dac_screwholes(bolt_clearance_d);
 
         // brass inserts
-        // TODO correct dimensions
-        translate([0,0,-1]) linear_extrude(7) dac_screwholes(5);
+        translate([0,0,-1]) linear_extrude(threaded_insert_l+1) dac_screwholes(threaded_insert_d);
     }
 }
 
