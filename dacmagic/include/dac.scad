@@ -1,11 +1,18 @@
 module dac_bracket() mirror([0,0,1]) {
+    // extra gap around dac to allow it to slide in, and account for manufacturing tolerance
     margin=0.2;
+
+    // general shell thickness
+    t1=2.5;
+    // top/bottom thickness (should be same as "gap" for dac_screwholes)
+    t2=13;
+
 
     difference() {
         // main shape
         hull() {
-            linear_extrude(30) offset(3) rounded_square(dac_case_w, dac_case_h, dac_case_r);
-            linear_extrude(5) rounded_square(dac_case_w, dac_case_h+30, dac_case_r);
+            linear_extrude(30) offset(t1) rounded_square(dac_case_w, dac_case_h, dac_case_r);
+            linear_extrude(5) rounded_square(dac_case_w, dac_case_h+t2*2, dac_case_r);
         }
 
         // dac cut through
@@ -25,7 +32,7 @@ module dac_bracket() mirror([0,0,1]) {
 // screw cut outs for front panel and brass inserts (hence variable R)
 module dac_screwholes(d) {
     // gap applies positively vertically and negatively horizontally (where space is premium)
-    gap=15;
+    gap=13;
     // left
     translate([-dac_bezel_w/2+gap,-dac_bezel_h/2-gap/2,0]) circle(d=d);
     translate([-dac_bezel_w/2+gap, dac_bezel_h/2+gap/2,0]) circle(d=d);
