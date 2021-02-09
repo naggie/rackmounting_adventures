@@ -57,15 +57,6 @@ module xlr(spacing=30) {
     }
 }
 
-module display(mode=NORMAL) {
-    if (mode == NORMAL) {
-        offset(1.5) offset(-1.5) square([display_w,display_h]);
-    } else if (mode == CLEARANCE) {
-        // TODO correct
-        translate([-5,-3]) square([63,35]);
-    }
-}
-
 module switch(mode=NORMAL) {
     if (mode == NORMAL) {
         circle(d=10);
@@ -74,6 +65,7 @@ module switch(mode=NORMAL) {
     }
 }
 
-include <include/dac.scad>;
 include <include/rack2u.scad>;
+include <include/display.scad>;
+include <include/dac.scad>;
 include <include/plate.scad>;
