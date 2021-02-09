@@ -21,8 +21,9 @@ module dac_bracket() mirror([0,0,1]) {
         // bezel cut through
         translate([0,0,-1]) linear_extrude(dac_bezel_t-panel_t+1) rounded_square(dac_bezel_w+2*margin, dac_bezel_h+2*margin, dac_bezel_r+margin);
 
+        // TODO make this a module
         // bolt holes
-        translate([0,0,-500]) linear_extrude(1000) dac_screwholes(bolt_clearance_d);
+        translate([0,0,-2]) linear_extrude(bolt_l+2) dac_screwholes(bolt_clearance_d);
 
         // brass inserts
         translate([0,0,-1]) linear_extrude(threaded_insert_l+1) dac_screwholes(threaded_insert_d);

@@ -21,14 +21,15 @@ dac_case_r=5;
 
 dac_offset_x = 286;
 
+// 1.5mm is standard. 2.0 for extra strength
 panel_t = 2.0;
 
-// M3 is 3.2mm in diameter, add 10% for clearance
-// https://www.nmri.go.jp/oldpages/eng/khirata/metalwork/basic/bolt/index_e.html
-// used for most fixtures. XLR uses M2 or M2.5
-bolt_clearance_d = 3.5;
-threaded_insert_d = 3.9;
-threaded_insert_l = 6.0;
+// used for most fixtures. XLR uses M2 or M2.5. M3 CSK depth 2mm
+bolt_d = 2.5;
+bolt_l = 10;
+bolt_clearance_d = bolt_d * 1.1;
+threaded_insert_d = 3.8;
+threaded_insert_l = 4.1;
 
 // modes to allow offsets without spanning modules
 NORMAL=1;
@@ -51,8 +52,8 @@ module xlr(spacing=30) {
     translate([0,-spacing/2])
     for (i = [0:1]) {
         translate([0, i*spacing,]) circle(d=25);
-        translate([0, i*spacing,]) rotate([0, 0, 45]) translate([0, 15, 0]) circle(d=3);
-        translate([0, i*spacing,]) rotate([0, 0, 225]) translate([0, 15, 0]) circle(d=3);
+        translate([0, i*spacing,]) rotate([0, 0, 45]) translate([0, 15, 0]) circle(d=bolt_clearance_d);
+        translate([0, i*spacing,]) rotate([0, 0, 225]) translate([0, 15, 0]) circle(d=bolt_clearance_d);
     }
 }
 
