@@ -4,15 +4,15 @@ module dac_bracket() mirror([0,0,1]) {
 
     // general shell thickness
     t1=2.5;
-    // top/bottom thickness (should be same as "gap" for dac_screwholes)
-    t2=13;
 
 
     difference() {
         // main shape
         hull() {
+            // sleve
             linear_extrude(30) offset(t1) rounded_square(dac_case_w, dac_case_h, dac_case_r);
-            linear_extrude(5) rounded_square(dac_case_w, dac_case_h+t2*2, dac_case_r);
+            // turrets
+            linear_extrude(5) dac_screwholes(t1*2+threaded_insert_d);
         }
 
         // dac cut through
