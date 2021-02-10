@@ -23,7 +23,13 @@ dac_case_r=5;
 
 // layout in X is done by eye -- calculating gaps is time consuming and might
 // not necessarily result in a visually balanced look due varied shapes.
+power_switch_location = [35,20];
+soft_button_location = [35,-20];
+display_location = [60,0];
+knob_location = [144,0];
 dac_location = [286,0];
+aux_location = [415,0];
+xlr_location = [445,0];
 
 // 1.5mm is standard. 2.0 for extra strength
 panel_t = 2.0;
