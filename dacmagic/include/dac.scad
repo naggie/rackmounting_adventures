@@ -48,7 +48,7 @@ module dac_cutout(mode=NORMAL) {
     if (mode == NORMAL) {
         rounded_square(dac_bezel_w+2*margin,dac_bezel_h+2*margin,dac_bezel_r+margin);
         dac_screwholes(bolt_clearance_d);
-    } else if (mode = CLEARANCE) {
+    } else if (mode == CLEARANCE) {
         projection() dac_bracket();
     }
 }
