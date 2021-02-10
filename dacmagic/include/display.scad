@@ -1,12 +1,12 @@
-module display(mode=NORMAL) {
-    if (mode == NORMAL) {
-        offset(1.5) offset(-1.5) square([display_w,display_h]);
-    } else if (mode == CLEARANCE) {
-        translate([0,-5]) square([72,43]);
-    }
+module display_cutout() {
+    rounded_square([display_w,display_h], 1.5);
 }
 
-module display_negative() {
+module display() {
+    translate([0,0,2.9]) linear_extrude(1.1) translate([0,-5]) square([72,43], center=true);
+    linear_extrude(2.9) display_cutout();
 }
 
-// display PCB clearance = 2.9mm, 1.1mm PCB thickness
+module display_holder_negative() {
+
+}

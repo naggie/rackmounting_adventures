@@ -1,21 +1,21 @@
-module plate(mode=NORMAL) {
+module plate() {
     difference() {
+        // x=0 is centerline
         translate([0,-rack_h/2,0]) rack2u();
 
         // main power
-        translate([35,20,0]) switch(mode);
+        translate([35,20,0]) switch_cutout();
 
         // soft power
         translate([35,-20,0]) circle(d=16);
 
-
-        translate([57,-display_h/2,0]) display(mode);
-        translate([144,0,0]) knob(mode);
-        translate([dac_offset_x,0,0]) dac_cutout(mode);
+        translate([60,0,0]) display_cutout();
+        translate([144,0,0]) knob_cutout();
+        translate(dac_location) dac_cutout();
 
         // AUX switch
         translate([415,0,0]) circle(d=6);
 
-        translate([445,0,0]) xlr();
+        translate([445,0,0]) xlr_cutout();
     }
 }
