@@ -5,5 +5,6 @@ translate([0,0,plate_t]) {
     translate(knob_location) knob();
     translate(dac_location) dac();
 }
+translate(display_location) display();
 
 translate(dac_location) dac_bracket();
