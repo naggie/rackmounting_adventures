@@ -35,10 +35,10 @@ module dac_screwholes(d) {
     // gap applies positively vertically and negatively horizontally (where space is premium)
     gap=13;
     // left
-    translate([-dac_bezel_w/2+gap,-dac_bezel_h/2-gap/2,0]) circle(d=d);
-    translate([-dac_bezel_w/2+gap, dac_bezel_h/2+gap/2,0]) circle(d=d);
-    translate([ dac_bezel_w/2-gap, dac_bezel_h/2+gap/2,0]) circle(d=d);
-    translate([ dac_bezel_w/2-gap,-dac_bezel_h/2-gap/2,0]) circle(d=d);
+    translate([-dac_bezel_w/2+gap,-dac_bezel_h/2-gap/2]) circle(d=d);
+    translate([-dac_bezel_w/2+gap, dac_bezel_h/2+gap/2]) circle(d=d);
+    translate([ dac_bezel_w/2-gap, dac_bezel_h/2+gap/2]) circle(d=d);
+    translate([ dac_bezel_w/2-gap,-dac_bezel_h/2-gap/2]) circle(d=d);
 }
 
 // dac parts center referenced as many concentric parts
