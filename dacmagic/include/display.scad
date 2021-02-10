@@ -5,3 +5,8 @@ module display(mode=NORMAL) {
         translate([0,-5]) square([72,43]);
     }
 }
+
+module display_negative() {
+}
+
+// display PCB clearance = 2.9mm, 1.1mm PCB thickness

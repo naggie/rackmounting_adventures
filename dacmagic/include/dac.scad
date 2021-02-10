@@ -42,10 +42,15 @@ module dac_screwholes(d) {
 }
 
 // dac parts center referenced as many concentric parts
-module dac_cutout() {
+module dac_cutout(mode=NORMAL) {
     margin = 1.0;
-    rounded_square(dac_bezel_w+2*margin,dac_bezel_h+2*margin,dac_bezel_r+margin);
-    dac_screwholes(bolt_clearance_d);
+
+    if (mode == NORMAL) {
+        rounded_square(dac_bezel_w+2*margin,dac_bezel_h+2*margin,dac_bezel_r+margin);
+        dac_screwholes(bolt_clearance_d);
+    } else if (mode = CLEARANCE) {
+        projection() dac_bracket();
+    }
 }
 
 module dac() color("#333") mirror([0,0,1]) {
