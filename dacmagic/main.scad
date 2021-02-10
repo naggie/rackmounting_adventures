@@ -32,7 +32,7 @@ aux_location = [415,0];
 xlr_location = [445,0];
 
 // 1.5mm is standard. 2.0 for extra strength
-panel_t = 2.0;
+plate_t = 2.0;
 
 // used for most fixtures. XLR uses M2 or M2.5. M3 CSK depth 2mm
 bolt_d = 2.5;
