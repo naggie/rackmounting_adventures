@@ -1,5 +1,5 @@
 module display_cutout() {
-    rounded_square([display_w,display_h], 1.5);
+    rounded_square(display_w,display_h, 1.5);
 }
 
 module display() {

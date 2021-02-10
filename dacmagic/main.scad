@@ -25,8 +25,8 @@ dac_case_r=5;
 // not necessarily result in a visually balanced look due varied shapes.
 power_switch_location = [35,20];
 soft_button_location = [35,-20];
-display_location = [60,0];
-knob_location = [144,0];
+display_location = [88,0];
+knob_location = [148,0];
 dac_location = [286,0];
 aux_location = [415,0];
 xlr_location = [445,0];
