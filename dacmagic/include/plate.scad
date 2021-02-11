@@ -9,8 +9,8 @@ module plate() {
         translate(display_location) display_cutout();
         translate(knob_location) knob_cutout();
         translate(dac_location) dac_cutout();
-        translate(usb_location) usb();
-        translate(toggle_location) toggle();
+        translate(usb_location) usb_cutout();
+        translate(toggle_location) toggle_cutout();
         translate(xlr_location) xlr_cutout();
     }
 }

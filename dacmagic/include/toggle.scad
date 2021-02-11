@@ -1,4 +1,4 @@
-module toggle() {
+module toggle_cutout() {
     circle(d=6);
 }
 module toggle_text() {
