@@ -6,3 +6,6 @@ module switch() {
     // TODO correct and implement fully
     translate([0,0,-15]) linear_extrude(10) square([15,29],center=true);
 }
+
+module switch_text()
+    standard_text("MAIN POWER", 10);
