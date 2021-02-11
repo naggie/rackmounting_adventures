@@ -4,4 +4,4 @@ module usb() {
 }
 
 module usb_text()
-    standard_text("USB", 13);
+    standard_text("USB IN", 13);

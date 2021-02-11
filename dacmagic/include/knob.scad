@@ -9,4 +9,4 @@ module knob() color("#333") {
 }
 
 module knob_text()
-    standard_text("VOLUME", display_h);
+    standard_text("PI VOLUME", display_h);
