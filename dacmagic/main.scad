@@ -27,8 +27,8 @@ dac_case_r=5;
 
 // layout in X is done by eye -- calculating gaps is time consuming and might
 // not necessarily result in a visually balanced look due varied shapes.
-switch_location = [35,20];
-button_location = [35,-20];
+switch1_location = [35,25];
+switch2_location = [35,-18];
 display_location = [88,0];
 knob_location = [148,0];
 dac_location = [286,0];
@@ -48,7 +48,6 @@ threaded_insert_l = 4.1;
 include <include/etc.scad>;
 include <include/rack2u.scad>;
 include <include/switch.scad>;
-include <include/button.scad>;
 include <include/knob.scad>;
 include <include/display.scad>;
 include <include/dac.scad>;

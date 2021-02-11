@@ -1,11 +1,14 @@
 module switch_cutout() {
-    circle(d=10);
+    // TODO check dims
+    square([21,27],center=true);
 }
 
 module switch() {
     // TODO correct and implement fully
-    translate([0,0,-15]) linear_extrude(10) square([15,29],center=true);
 }
 
-module switch_text()
-    standard_text("MAIN POWER", 10);
+module switch1_text()
+    standard_text("MAIN POWER", 27);
+
+module switch2_text()
+    standard_text("AMP POWER", 27);
