@@ -27,4 +27,4 @@ module display_screwholes(d) {
 }
 
 module display_text()
-    standard_text("STREAM DISPLAY", display_h);
+    standard_text("HIFIBERRY", display_h);
