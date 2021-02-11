@@ -32,7 +32,8 @@ switch2_location = [35,-18];
 display_location = [88,0];
 knob_location = [148,0];
 dac_location = [286,0];
-aux_location = [415,0];
+usb_location = [413,15];
+toggle_location = [413,-15];
 xlr_location = [445,0];
 
 // 1.5mm is standard. 2.0 for extra strength
@@ -50,7 +51,9 @@ include <include/rack2u.scad>;
 include <include/switch.scad>;
 include <include/knob.scad>;
 include <include/display.scad>;
+include <include/usb.scad>;
 include <include/dac.scad>;
+include <include/toggle.scad>;
 include <include/xlr.scad>;
 include <include/silkscreen.scad>;
 
