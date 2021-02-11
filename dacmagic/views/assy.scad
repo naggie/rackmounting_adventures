@@ -6,6 +6,8 @@ rack2u_rails();
 translate(switch1_location) switch();
 translate(switch2_location) switch();
 
+translate(piholder_location) piholder();
+
 translate([0,0,plate_t]) {
     translate(knob_location) knob();
     translate(dac_location) dac();

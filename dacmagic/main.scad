@@ -25,11 +25,8 @@ dac_d=190;
 dac_case_w=214;
 dac_case_h=50;
 dac_case_r=5;
-
 // defined here so other panel features can use y vals; pi holder does.
 dac_screw_offset=[dac_bezel_w/2-13,dac_bezel_h/2+6.5];
-
-piholder_w=120;
 
 // layout in X is done by eye -- calculating gaps is time consuming and might
 // not necessarily result in a visually balanced look due varied shapes.
