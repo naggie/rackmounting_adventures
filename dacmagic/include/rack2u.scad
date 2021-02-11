@@ -22,7 +22,7 @@ module rack2u() {
     }
 }
 
-module rack2u_rails() translate([0,0,-10]) linear_extrude(10) {
+module rack2u_rails() color("black") translate([0,0,-10]) linear_extrude(10) {
     translate([0,-rack_h]) square([rack_ear, rack_h*3]);
     translate([rack_w-rack_ear,-rack_h]) square([rack_ear, rack_h*3]);
 }
