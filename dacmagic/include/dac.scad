@@ -56,4 +56,4 @@ module dac() color("#333") mirror([0,0,1]) {
 }
 
 module dac_text()
-    standard_text("DAC / PRE-AMP", dac_bezel_h);
+    standard_text("DAC / PRE-AMP", dac_bezel_h+2);

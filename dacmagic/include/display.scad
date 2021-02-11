@@ -27,4 +27,4 @@ module display_screwholes(d) {
 }
 
 module display_text()
-    standard_text("HIFIBERRY", display_h);
+    standard_text("PI DISPLAY", display_h);
