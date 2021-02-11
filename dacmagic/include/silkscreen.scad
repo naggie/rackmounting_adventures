@@ -7,4 +7,5 @@ module silkscreen() {
     translate(display_location) display_text();
     translate(knob_location) knob_text();
     translate(dac_location) dac_text();
+    translate(xlr_location) xlr_text();
 }

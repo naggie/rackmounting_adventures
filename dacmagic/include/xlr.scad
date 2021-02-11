@@ -7,3 +7,6 @@ module xlr_cutout() {
         translate([0, i*spacing,]) rotate([0, 0, 225]) translate([0, 15, 0]) circle(d=bolt_clearance_d);
     }
 }
+
+module xlr_text()
+    standard_text("AUX IN", 53);
