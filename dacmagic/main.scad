@@ -10,6 +10,10 @@ rack_ear = 20.2;
 
 display_w=56.8;
 display_h=29.4;
+display_pcb_w=72;
+display_pcb_h=43;
+display_pcb_offset=[0,-5];
+
 
 dac_bezel_r=5;
 dac_bezel_w=215;
@@ -48,5 +52,6 @@ include <include/knob.scad>;
 include <include/display.scad>;
 include <include/dac.scad>;
 include <include/xlr.scad>;
+include <include/silkscreen.scad>;
 
 include <include/plate.scad>;

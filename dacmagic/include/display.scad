@@ -1,7 +1,3 @@
-display_pcb_w=72;
-display_pcb_h=43;
-display_pcb_offset=[0,-5];
-
 module display_cutout() {
     rounded_square(display_w,display_h, 1.5);
 }
@@ -29,3 +25,6 @@ module display_screwholes(d) {
         translate([ display_pcb_w/2-hole_offset,-display_pcb_h/2+hole_offset]) circle(d=d);
     }
 }
+
+module display_text()
+    standard_text("STREAM DISPLAY", display_h);

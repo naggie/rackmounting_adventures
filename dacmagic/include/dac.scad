@@ -55,6 +55,5 @@ module dac() color("#333") mirror([0,0,1]) {
     linear_extrude(dac_d) rounded_square(dac_case_w,dac_case_h,dac_case_r);
 }
 
-module dac_text() {
-    text("DAC / Pre-amp");
-}
+module dac_text()
+    standard_text("DAC / PRE-AMP", dac_bezel_h);
