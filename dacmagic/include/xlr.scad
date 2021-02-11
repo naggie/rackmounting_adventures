@@ -8,5 +8,8 @@ module xlr_cutout() {
     }
 }
 
-module xlr_text()
+module xlr_text() {
     standard_text("AUX IN", 53);
+    translate([18,21.5]) standard_text("L");
+    translate([18,-8.5]) standard_text("R");
+}
