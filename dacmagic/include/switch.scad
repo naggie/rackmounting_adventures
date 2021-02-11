@@ -2,7 +2,7 @@ module switch_cutout() {
     circle(d=10);
 }
 
-module switch() mirror([0,0,1]) {
+module switch() color("#111") mirror([0,0,1]) {
     // TODO correct and implement fully
     translate([0,0,4]) linear_extrude(10) square([15,29],center=true);
 }
