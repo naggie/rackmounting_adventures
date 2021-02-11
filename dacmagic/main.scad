@@ -27,8 +27,8 @@ dac_case_r=5;
 
 // layout in X is done by eye -- calculating gaps is time consuming and might
 // not necessarily result in a visually balanced look due varied shapes.
-switch1_location = [35,25];
-switch2_location = [35,-18];
+switch1_location = [35,20];
+switch2_location = [35,-20];
 display_location = [88,0];
 knob_location = [148,0];
 dac_location = [286,0];
