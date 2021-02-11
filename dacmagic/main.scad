@@ -8,6 +8,7 @@ rack_w = 19* 25.4;
 rack_h = 88;
 rack_ear = 20.2;
 
+
 display_w=56.8;
 display_h=29.4;
 display_pcb_w=72;
@@ -25,10 +26,16 @@ dac_case_w=214;
 dac_case_h=50;
 dac_case_r=5;
 
+// defined here so other panel features can use y vals; pi holder does.
+dac_screw_offset=[dac_bezel_w/2-13,dac_bezel_h/2+6.5];
+
+piholder_w=120;
+
 // layout in X is done by eye -- calculating gaps is time consuming and might
 // not necessarily result in a visually balanced look due varied shapes.
 switch1_location = [35,22];
 switch2_location = [35,-18];
+piholder_location = [110,0];
 display_location = [88,0];
 knob_location = [148,0];
 dac_location = [286,0];
@@ -49,8 +56,9 @@ threaded_insert_l = 4.1;
 include <include/etc.scad>;
 include <include/rack2u.scad>;
 include <include/switch.scad>;
-include <include/knob.scad>;
+include <include/piholder.scad>;
 include <include/display.scad>;
+include <include/knob.scad>;
 include <include/usb.scad>;
 include <include/dac.scad>;
 include <include/toggle.scad>;

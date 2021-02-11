@@ -32,13 +32,11 @@ module dac_bracket() color("#777") mirror([0,0,1]) {
 
 // screw cut outs for front panel and brass inserts (hence variable R)
 module dac_screwholes(d) {
-    // gap applies positively vertically and negatively horizontally (where space is premium)
-    gap=13;
-    // left
-    translate([-dac_bezel_w/2+gap,-dac_bezel_h/2-gap/2]) circle(d=d);
-    translate([-dac_bezel_w/2+gap, dac_bezel_h/2+gap/2]) circle(d=d);
-    translate([ dac_bezel_w/2-gap, dac_bezel_h/2+gap/2]) circle(d=d);
-    translate([ dac_bezel_w/2-gap,-dac_bezel_h/2-gap/2]) circle(d=d);
+    // screws are above DAC within width
+    translate([-dac_screw_offset[0],-dac_screw_offset[1]]) circle(d=d);
+    translate([-dac_screw_offset[0], dac_screw_offset[1]]) circle(d=d);
+    translate([ dac_screw_offset[0], dac_screw_offset[1]]) circle(d=d);
+    translate([ dac_screw_offset[0],-dac_screw_offset[1]]) circle(d=d);
 }
 
 // dac parts center referenced as many concentric parts
