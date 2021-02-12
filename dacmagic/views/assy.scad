@@ -15,5 +15,5 @@ translate(usb_location) usb();
 translate([0,0,plate_t]) {
     translate(knob_location) knob();
     translate(dac_location) dac();
-    silkscreen();
+    color("white") linear_extrude(0.001) silkscreen();
 }
