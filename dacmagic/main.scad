@@ -47,7 +47,7 @@ plate_t = 2.0;
 bolt_d = 2.5;
 bolt_l = 10;
 bolt_clearance_d = bolt_d * 1.1;
-threaded_insert_d = 3.8;
+threaded_insert_d = 3.6;
 threaded_insert_l = 4.1;
 
 include <include/etc.scad>;
