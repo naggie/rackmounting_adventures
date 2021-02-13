@@ -18,9 +18,13 @@ module piholder() color("green") {
     l=80;
     difference() {
         // main panel
-        translate([0,0,-t])
-            linear_extrude(t)
-            square([piholder_w, rack_h], center=true);
+        union() {
+            translate([0,0,-t])
+                linear_extrude(t)
+                square([piholder_w, rack_h], center=true);
+            // shelf
+            translate([-piholder_w/2,-rack_h/2,-t+0.001]) rotate([-90,0,0]) pi_shelf();
+        }
 
         // bolt holes
         translate([0,0,2-bolt_l]) linear_extrude(bolt_l+2) piholder_screwholes(bolt_clearance_d);
@@ -28,8 +32,6 @@ module piholder() color("green") {
         // brass inserts
         translate([0,0,1-threaded_insert_l]) linear_extrude(threaded_insert_l+1) piholder_screwholes(threaded_insert_d);
     }
-    // shelf
-    translate([-piholder_w/2,-rack_h/2,-t+0.001]) rotate([-90,0,0]) pi_shelf();
 }
 
 // https://www.raspberrypi.org/documentation/hardware/raspberrypi/mechanical/README.md
