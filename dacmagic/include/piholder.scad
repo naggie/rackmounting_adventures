@@ -29,7 +29,7 @@ module piholder() color("green") {
         translate([0,0,1-threaded_insert_l]) linear_extrude(threaded_insert_l+1) piholder_screwholes(threaded_insert_d);
     }
     // shelf
-    translate([-piholder_w/2,-rack_h/2,+0.001]) rotate([-90,0,0]) pi_shelf();
+    translate([-piholder_w/2,-rack_h/2,-t+0.001]) rotate([-90,0,0]) pi_shelf();
 }
 
 // https://www.raspberrypi.org/documentation/hardware/raspberrypi/mechanical/README.md
@@ -54,9 +54,19 @@ module pi() {
 // shelf to put Pi on. origin at lower left, not center
 // TODO chamfer against panel
 module pi_shelf() {
+    t=8;
+    c=3;
     difference() {
-        linear_extrude(8) square([piholder_w, piholder_d]);
-        translate([piholder_w,piholder_d,8+0.01]) {
+        rotate([90,0,90]) linear_extrude(piholder_w) polygon([
+            [0,0],
+            [0,t+c],
+            [c,t],
+            [piholder_d,t],
+            [piholder_d,0],
+            [0,0],
+        ]);
+
+        translate([piholder_w,piholder_d,t+0.01]) {
             translate([0,0,-threaded_insert_l])
                 linear_extrude(threaded_insert_l)
                 pi_screwholes(threaded_insert_d);
