@@ -16,6 +16,7 @@ display_pcb_h=43;
 display_pcb_offset=[0,-5];
 
 piholder_w = 120;
+piholder_d = 80;
 
 
 dac_bezel_r=5;

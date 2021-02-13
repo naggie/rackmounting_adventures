@@ -13,7 +13,7 @@ module piholder_screwholes(d) {
 
 module piholder_cutout() piholder_screwholes(bolt_clearance_d);
 
-module piholder() color("#444") {
+module piholder() color("green") {
     t=8;
     l=80;
     difference() {
@@ -29,7 +29,7 @@ module piholder() color("#444") {
         translate([0,0,1-threaded_insert_l]) linear_extrude(threaded_insert_l+1) piholder_screwholes(threaded_insert_d);
     }
     // shelf
-    translate([-piholder_w/2,-rack_h/2,-l-t-0.001]) linear_extrude(l+t) square([piholder_w, t]);
+    translate([-piholder_w/2,-rack_h/2,+0.001]) rotate([-90,0,0]) pi_shelf();
 }
 
 // centered to pi()
@@ -49,4 +49,10 @@ module pi() {
         linear_extrude(1.4) rounded_square(85,56,3.0);
         translate([0, 0,-50]) linear_extrude(100) pi_screwholes(bolt_clearance_d);
     }
+}
+
+// shelf to put Pi on. origin at lower left, not center
+// TODO chamfer against panel
+module pi_shelf() {
+    linear_extrude(8) square([piholder_w, piholder_d]);
 }
