@@ -2,16 +2,16 @@ module display_cutout() {
     rounded_square(display_w,display_h, 1.5);
 }
 
-module display() mirror([0,0,1]) {
+module pcb(d=2.86) {
     difference() {
-        color("#237a63") translate([0,0,2.9]) linear_extrude(1.1) translate(display_pcb_offset) square([display_pcb_w, display_pcb_h], center=true);
-        translate([0,0,-250]) linear_extrude(500) display_screwholes(2.86);
+        translate(display_pcb_offset) square([display_pcb_w, display_pcb_h], center=true);
+        display_screwholes(d);
     }
-    color("#1c2854") linear_extrude(2.9) display_cutout();
 }
 
-module display_holder_negative() {
-
+module display() mirror([0,0,1]) {
+    color("#237a63") translate([0,0,2.9]) linear_extrude(1.1) pcb();
+    color("#1c2854") linear_extrude(2.9) display_cutout();
 }
 
 // screw cut outs for front panel and brass inserts (hence variable R)
@@ -28,3 +28,10 @@ module display_screwholes(d) {
 
 module display_text()
     standard_text("PI DISPLAY", display_h);
+
+module display_holder_negative() {
+    // Corner post holders
+    // Corner posts
+}
+
+//!display();
