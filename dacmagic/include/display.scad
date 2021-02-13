@@ -1,12 +1,17 @@
+// TODO sort out application of offsets
 module display_cutout() {
     rounded_square(display_w,display_h, 1.5);
 }
 
-module pcb(d=2.86) {
+module pcb(margin=0) {
     difference() {
-        translate(display_pcb_offset) square([display_pcb_w, display_pcb_h], center=true);
-        display_screwholes(d);
+        translate(display_pcb_offset) offset(margin) square([display_pcb_w, display_pcb_h], center=true);
+        display_screwholes(2.86-2*margin);
     }
+}
+
+module surround(margin=0) {
+    translate(display_pcb_offset) offset(margin) square([display_pcb_h, display_pcb_w], center=true);
 }
 
 module display() mirror([0,0,1]) {
@@ -29,9 +34,12 @@ module display_screwholes(d) {
 module display_text()
     standard_text("PI DISPLAY", display_h);
 
-module display_holder_negative() {
-    // Corner post holders
-    // Corner posts
+module display_holder_negative() mirror([0,0,1]) {
+    translate([0,0,2.9]) linear_extrude(20) pcb(0.2);
+    // space for display + surround
+    translate(display_pcb_offset) linear_extrude(2.901) square([display_pcb_w-10-0.2,display_pcb_h-1.5], center=true);
+    // avoid solder connections
+    translate(display_pcb_offset) linear_extrude(2.901) translate([-5,0]) square([display_pcb_w-9,display_pcb_h-20], center=true);
 }
 
-//!display();
+!display_holder_negative();
