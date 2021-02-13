@@ -31,6 +31,9 @@ module piholder() color("green") {
 
         // brass inserts
         translate([0,0,1-threaded_insert_l]) linear_extrude(threaded_insert_l+1) piholder_screwholes(threaded_insert_d);
+
+        // TODO offset correctly
+        translate([display_location[0]-piholder_location[0],0,0]) display_holder_negative();
     }
 }
 
@@ -78,5 +81,7 @@ module pi_shelf() {
         }
     }
 }
+
+//!piholder();
 
 // TODO PSU holder HAT

@@ -1,4 +1,7 @@
-$fn=200;
+//$fn=200;
+
+$fa=2;
+$fs=0.2;
 
 // TODO text for UV printing / silkscreen
 
@@ -13,7 +16,7 @@ display_w=56.8;
 display_h=29.4;
 display_pcb_w=72;
 display_pcb_h=43;
-display_pcb_offset=[0,-5];
+display_pcb_offset=[0,-3.3];
 
 piholder_w = 120;
 piholder_d = 80;
