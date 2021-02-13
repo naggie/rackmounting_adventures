@@ -3,7 +3,7 @@
 // screw cut outs for front panel and brass inserts (hence variable R)
 // defines footprint, too
 module piholder_screwholes(d) {
-    x_sep = 110;
+    x_sep = piholder_w - threaded_insert_d * 2;
 
     translate([-x_sep/2,-dac_screw_offset[1]]) circle(d=d);
     translate([-x_sep/2, dac_screw_offset[1]]) circle(d=d);
@@ -14,13 +14,13 @@ module piholder_screwholes(d) {
 module piholder_cutout() piholder_screwholes(bolt_clearance_d);
 
 module piholder() color("#444") {
-    t=6;
+    t=8;
+    l=80;
     difference() {
         // main panel
         translate([0,0,-t])
             linear_extrude(t)
-            hull()
-            piholder_screwholes(threaded_insert_d+2.5);
+            square([piholder_w, rack_h], center=true);
 
         // bolt holes
         translate([0,0,2-bolt_l]) linear_extrude(bolt_l+2) piholder_screwholes(bolt_clearance_d);
@@ -28,6 +28,8 @@ module piholder() color("#444") {
         // brass inserts
         translate([0,0,1-threaded_insert_l]) linear_extrude(threaded_insert_l+1) piholder_screwholes(threaded_insert_d);
     }
+    // shelf
+    translate([-piholder_w/2,-rack_h/2,-l-t-0.001]) linear_extrude(l+t) square([piholder_w, t]);
 }
 
 // centered to pi()
