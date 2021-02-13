@@ -1,4 +1,4 @@
-# General aproach
+# General approach
 Panel itself is 2d, as are cut-outs.
 
 Real objects are 3D, implemented in front and behind for clearance + view
@@ -9,6 +9,9 @@ so a cut out, bracket and object can share the same reference easily.
 
 X-layout is done by eye. Some features are Y-aligned. No obsession over round
 numbers or calculated spacing -- balance is more than a function of margin.
+
+Modules are used to create new co-ordinate frames such that geometry can be
+used to avoid calculating positioning mathematically.
 
 # Conventions
 
