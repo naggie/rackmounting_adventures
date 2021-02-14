@@ -1,5 +1,5 @@
 module knob_cutout() {
-    circle(d=6);
+    circle(d=7.2);
 }
 
 module knob() color("#333") {
