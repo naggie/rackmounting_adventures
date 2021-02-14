@@ -7,7 +7,7 @@ rack2u_rails();
 translate(switch1_location) switch();
 translate(switch2_location) switch();
 translate(piholder_location) piholder();
-translate(display_location) display();
+//translate(display_location) display();
 translate(dac_location) dac_bracket();
 translate(usb_location) usb();
 
