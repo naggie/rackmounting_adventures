@@ -57,6 +57,7 @@ threaded_insert_d = 3.6;
 threaded_insert_l = 4.1;
 
 include <include/etc.scad>;
+include <include/sidebox.scad>;
 include <include/rack2u.scad>;
 include <include/switch.scad>;
 include <include/display.scad>;
