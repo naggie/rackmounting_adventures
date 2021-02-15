@@ -28,3 +28,5 @@ module switch_box() {
             switch_cutout();
     }
 }
+
+module switch_box_lid() sidebox_lid(15.5);
