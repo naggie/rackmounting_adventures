@@ -1,6 +1,6 @@
-module sidebox(internal_w,d=50) { //mirror([0,0,1]) {
+module sidebox(internal_w,d=50) mirror([0,0,1]) {
     t=3;
-    tt = 2*t + threaded_insert_d;
+    tt = 3 + threaded_insert_d;
     difference() {
         linear_extrude(d-t)
             square([internal_w+2*t,rack_h], center=true);
@@ -31,7 +31,7 @@ module sidebox(internal_w,d=50) { //mirror([0,0,1]) {
 
 module sidebox_lid(internal_w) {
     t=3;
-    tt = 2*t + threaded_insert_d;
+    tt = 1.5*t + threaded_insert_d;
     difference() {
         linear_extrude(t)
             square([internal_w+2*t,rack_h], center=true);

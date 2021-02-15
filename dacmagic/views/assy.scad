@@ -4,6 +4,7 @@ color("#444") linear_extrude(plate_t) plate();
 rack2u_rails();
 
 // back
+translate([switch1_location[0],0]) switch_box();
 translate(switch1_location) switch();
 translate(switch2_location) switch();
 translate(piholder_location) piholder();

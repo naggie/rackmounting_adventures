@@ -12,3 +12,19 @@ module switch1_text()
 
 module switch2_text()
     standard_text("AMP POWER", 10);
+
+module switch_box() {
+    difference() {
+        sidebox(15.5);
+
+        translate([0,0,-50])
+            translate(switch1_location)
+            linear_extrude(100)
+            switch_cutout();
+
+        translate([0,0,-50])
+            translate(switch2_location)
+            linear_extrude(100)
+            switch_cutout();
+    }
+}
