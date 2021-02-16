@@ -46,3 +46,11 @@ module sidebox_lid(internal_w) {
             circle(d=bolt_clearance_d);
     }
 }
+
+//module sidebox_screwholes(d) {
+//    for (
+//        l = [
+//            [],
+//        ]
+//    ) translate(l) circle(d=d);
+//}
