@@ -18,12 +18,12 @@ module switch_box() {
         sidebox(15.5);
 
         translate([0,0,-50])
-            translate(switch1_location)
+            translate([0,switch1_location[1]])
             linear_extrude(100)
             switch_cutout();
 
         translate([0,0,-50])
-            translate(switch2_location)
+            translate([0,switch2_location[1]])
             linear_extrude(100)
             switch_cutout();
     }
