@@ -1,5 +1,5 @@
 module switch_cutout() {
-    circle(d=10);
+    circle(d=12.5);
 }
 
 module switch() color("#111") mirror([0,0,1]) {
