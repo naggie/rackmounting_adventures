@@ -26,7 +26,19 @@ module switch_box() {
             translate([0,switch2_location[1]])
             linear_extrude(100)
             switch_cutout();
+
+        // space for nut
+        translate([0,0,-47.01])
+            linear_extrude(5.5)
+            square([17.5,17.5],center=true);
     }
 }
 
-module switch_box_lid() sidebox_lid(15.5);
+module switch_box_lid() {
+    difference() {
+        sidebox_lid(15.5);
+        translate([0,0,-50])
+            linear_extrude(100)
+            circle(d=12);
+    }
+}
