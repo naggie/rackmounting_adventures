@@ -46,8 +46,9 @@ usb_location = [413,18];
 toggle_location = [413,-22];
 xlr_location = [445,0];
 
-// 1.5mm is standard. 2.0 for extra strength
-plate_t = 2.0;
+// 1.5mm is standard. 2.0 for extra strength (steel, normally has folds)
+// 3.0mm is standard (aluminium)
+plate_t = 3.0;
 
 // used for most fixtures. XLR uses M2 or M2.5. M3 CSK depth 2mm
 bolt_d = 2.5;
