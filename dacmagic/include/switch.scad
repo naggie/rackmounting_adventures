@@ -8,10 +8,10 @@ module switch() color("#111") mirror([0,0,1]) {
 }
 
 module switch1_text()
-    standard_text("MAIN POWER", 10);
+    standard_text("STANDBY POWER", 10);
 
 module switch2_text()
-    standard_text("AMP POWER", 10);
+    standard_text("MAIN POWER", 10);
 
 module switch_box() {
     difference() {
