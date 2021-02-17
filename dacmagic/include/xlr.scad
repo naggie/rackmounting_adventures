@@ -12,6 +12,6 @@ module xlr_cutout() {
 
 module xlr_text() {
     standard_text("AUX IN", 53);
-    translate([17,21.5]) standard_text("L");
-    translate([17,-8.5]) standard_text("R");
+    translate([16.5,21]) standard_text("L");
+    translate([16.5,-9.5]) standard_text("R");
 }
