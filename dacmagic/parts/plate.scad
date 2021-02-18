@@ -1,2 +1,2 @@
 include <../main.scad>;
-plate();
+linear_extrude(3) plate();

@@ -35,3 +35,19 @@ Normally just calling a module.
 # Views
 
 Normally just calling/assembling modules.
+
+
+
+
+
+# OpenSCAD DXF
+
+# dxf_outline inkscape extension
+
+# svg_to_dxf.py
+
+# implicitcad/openjscad
+
+# FreeCAD DXF, import OpenSCAD/CSG settings
+
+A1 revision, still badd obrounds
