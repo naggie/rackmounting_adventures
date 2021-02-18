@@ -14,6 +14,6 @@ module knob_text()
 module knob_holder_negative() mirror([0,0,1]) {
     translate([0,0,1.5]) {
         linear_extrude(10) rounded_square(14,16,1);
-        mirror([0,0,1]) linear_extrude(20) knob_cutout();
+        translate([0,0,0.001]) mirror([0,0,1]) linear_extrude(20) knob_cutout();
     }
 }
