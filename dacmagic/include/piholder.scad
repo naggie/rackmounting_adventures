@@ -14,7 +14,7 @@ module piholder_screwholes(d) {
 module piholder_cutout() piholder_screwholes(bolt_clearance_d);
 
 module piholder() color("green") {
-    t=8;
+    t=5;
     l=80;
     difference() {
         // main panel
@@ -33,7 +33,7 @@ module piholder() color("green") {
         translate([0,0,1-threaded_insert_l]) linear_extrude(threaded_insert_l+1) piholder_screwholes(threaded_insert_d);
 
         translate([display_location[0]-piholder_location[0],0,0]) display_holder_negative();
-        translate([knob_location[0]-piholder_location[0],0,-50]) linear_extrude(100) knob_cutout();
+        translate([knob_location[0]-piholder_location[0],0,0]) knob_holder_negative();
     }
 }
 
