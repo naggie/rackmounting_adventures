@@ -46,11 +46,11 @@ module display_holder_negative() mirror([0,0,1]) translate([0,0,-0.01]) {
         // main cut out to place PCB in
         linear_extrude(20) offset(0.2) pcb();
         // stakes
-        translate([0,0,-0.01]) linear_extrude(display_pcb_t+2) pcb_screwholes(display_hole_d-0.2);
+        translate([0,0,-0.01]) linear_extrude(display_pcb_t+2) pcb_screwholes(display_hole_d-0.5);
     }
 
     // space for display + surround
-    translate(display_pcb_offset) linear_extrude(display_surround_t+0.1) square([display_pcb_w-10-0.2,display_pcb_h-1.5], center=true);
+    translate(display_pcb_offset) linear_extrude(display_surround_t+0.1) square([display_pcb_w-9.5,display_pcb_h-1.5], center=true);
     // avoid solder connections
     translate(display_pcb_offset) linear_extrude(display_surround_t+0.2) translate([-5,0]) square([display_pcb_w-9,display_pcb_h-20], center=true);
 }
