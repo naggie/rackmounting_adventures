@@ -18,24 +18,3 @@ module usb(expand=0) mirror([0,0,1]) color("#333") {
     linear_extrude(25) offset(expand) rounded_square(14.5,20.4,1.5);
     linear_extrude(30) circle(d=9.72);
 }
-
-module xlr_box() {
-    difference() {
-        sidebox(60);
-
-        translate([0,0,-50])
-            translate([0,switch1_location[1]])
-            linear_extrude(100)
-            switch_cutout();
-
-        translate([0,0,-50])
-            translate([0,switch2_location[1]])
-            linear_extrude(100)
-            switch_cutout();
-
-        // space for nut
-        translate([0,0,-47.01])
-            linear_extrude(5.5)
-            square([17.5,17.5],center=true);
-    }
-}

@@ -11,6 +11,7 @@ translate(piholder_location) piholder();
 //translate(display_location) display();
 translate(dac_location) dac_bracket();
 translate(usb_location) usb();
+translate(xlr_location) xlr_box();
 
 // front
 translate([0,0,plate_t]) {
