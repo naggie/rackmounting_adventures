@@ -56,7 +56,7 @@ module xlr_box_lid() {
 
 
         // USB cable
-        #translate([xlr_location[0]-usb_location[0]-15,usb_location[1],-50])
+        translate([xlr_location[0]-usb_location[0]-15,usb_location[1],-50])
             linear_extrude(100)
             hull() {
                 circle(d=5);
