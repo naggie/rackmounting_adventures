@@ -34,11 +34,33 @@ module xlr_box() {
 
 module xlr_box_lid() {
     difference() {
-        sidebox_lid(58.5);
-        translate([0,0,-50])
-            linear_extrude(100)
-            circle(d=12);
 
-        #translate([usb_location[0]-xlr_location[0],usb_location[1],0.01]) circle(d=6);
+        sidebox_lid(58.5);
+
+        // glands
+        translate([12,0,-50])
+            linear_extrude(100)
+            circle(d=13);
+
+        translate([-12,0,-50])
+            linear_extrude(100)
+            circle(d=13);
+
+        translate([12,-24,-50])
+            linear_extrude(100)
+            circle(d=13);
+
+        translate([-12,-24,-50])
+            linear_extrude(100)
+            circle(d=13);
+
+
+        // USB cable
+        #translate([xlr_location[0]-usb_location[0]-15,usb_location[1],-50])
+            linear_extrude(100)
+            hull() {
+                circle(d=5);
+                translate([20,0]) circle(d=5);
+            }
     }
 }
